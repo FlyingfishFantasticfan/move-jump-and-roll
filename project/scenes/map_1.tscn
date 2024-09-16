@@ -508,6 +508,9 @@ position = Vector2(103, 708)
 [node name="coin4" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
 position = Vector2(74, 760)
 
+[node name="coin5" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
+position = Vector2(57, 734)
+
 [node name="Plateforms" type="Node2D" parent="Mid"]
 
 [node name="plateform" parent="Mid/Plateforms" instance=ExtResource("4_3efra")]
@@ -581,6 +584,7 @@ shape = SubResource("RectangleShape2D_fq8yj")
 [connection signal="take_up" from="Mid/Coins/coin2" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin3" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin4" to="." method="_on_coin_take_up"]
+[connection signal="take_up" from="Mid/Coins/coin5" to="." method="_on_coin_take_up"]
 [connection signal="body_entered" from="Mid/Hides/Hide/Area2D" to="Mid/Hides/Hide" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Mid/Hides/Hide/Area2D" to="Mid/Hides/Hide" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Mid/Hides/Hide2/Area2D" to="Mid/Hides/Hide2" method="_on_area_2d_body_entered"]
