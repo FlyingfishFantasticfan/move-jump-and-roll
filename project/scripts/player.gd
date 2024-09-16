@@ -56,7 +56,7 @@ func update_velocity(delta: float) -> void:
 		can_roll = false
 		remain_roll -= 1
 		is_rolling = true
-		collision_shape_2d.get_shape().size.y = 15
+		collision_shape_2d.get_shape().size.y = 10
 		print("action: roll")
 		if is_super_jump :
 			print("action: super roll")

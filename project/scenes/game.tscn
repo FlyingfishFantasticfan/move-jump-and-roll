@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://7q05a8ig22gp"]
 
 [ext_resource type="PackedScene" uid="uid://cgmtnjh37mjxy" path="res://scenes/player.tscn" id="2_mrcko"]
-[ext_resource type="PackedScene" uid="uid://opvf4kseu1b1" path="res://scenes/map1.tscn" id="4_fm2ws"]
+[ext_resource type="PackedScene" uid="uid://opvf4kseu1b1" path="res://scenes/map_1.tscn" id="4_fm2ws"]
 [ext_resource type="AudioStream" uid="uid://w2d5hkjsvvhd" path="res://assets/music/time_for_adventure.mp3" id="5_56iyv"]
 
 [node name="Game" type="Node2D"]
