@@ -9,6 +9,7 @@ var is_emitted = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+#扣你吉瓦
 
 func _ready() -> void:
 	初始位置=position
