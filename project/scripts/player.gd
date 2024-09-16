@@ -43,8 +43,6 @@ func _physics_process(delta: float) -> void:
 func update_velocity(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	
-	if Input.is_action_just_pressed("kill"):
-		_dead()
 	
 	#死亡时位置不变
 	if is_die||is_revive:

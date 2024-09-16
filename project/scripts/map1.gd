@@ -39,5 +39,5 @@ func _on_coin_take_up() -> void:
 
 
 func _on_player_dead() -> void:
-
+	
 	pass # Replace with function body.
