@@ -1,16 +1,14 @@
-[gd_scene load_steps=21 format=4 uid="uid://opvf4kseu1b1"]
+[gd_scene load_steps=19 format=4 uid="uid://opvf4kseu1b1"]
 
 [ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://assets/sprites/world_tileset.png" id="1_0pacj"]
 [ext_resource type="Script" path="res://scripts/map_1.gd" id="1_xlnej"]
 [ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://assets/sprites/fire_coral_fan.png" id="2_dwuw4"]
 [ext_resource type="PackedScene" uid="uid://cxutkj6p4e7l" path="res://scenes/coin.tscn" id="3_ecs1y"]
 [ext_resource type="PackedScene" uid="uid://d2ifkhjx8d3tm" path="res://scenes/plateform.tscn" id="4_3efra"]
-[ext_resource type="Script" path="res://scripts/coin.gd" id="4_c2yf4"]
 [ext_resource type="PackedScene" uid="uid://b6krkacapm545" path="res://scenes/revive_zone.tscn" id="5_iayww"]
 [ext_resource type="PackedScene" uid="uid://d2ljkqrohgve5" path="res://scenes/kill_zone.tscn" id="6_in1y0"]
 [ext_resource type="Script" path="res://scripts/hide.gd" id="7_ww580"]
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="9_2p0hy"]
-[ext_resource type="PackedScene" uid="uid://cgmtnjh37mjxy" path="res://scenes/player.tscn" id="11_akgle"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g04qy"]
 texture = ExtResource("1_0pacj")
@@ -497,7 +495,6 @@ tile_map_data = PackedByteArray("AAADADIAAAAAAAEAAAAEADIAAAAAAAEAAAAFADIAAAAAAAE
 tile_set = SubResource("TileSet_nfbl7")
 
 [node name="Coins" type="Node2D" parent="Mid"]
-script = ExtResource("4_c2yf4")
 
 [node name="coin" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
 position = Vector2(176, 776)
@@ -579,9 +576,6 @@ position = Vector2(-70.5, 783.5)
 shape = SubResource("RectangleShape2D_fq8yj")
 
 [node name="win_zone" parent="Mid" instance=ExtResource("9_2p0hy")]
-
-[node name="Player" parent="." instance=ExtResource("11_akgle")]
-position = Vector2(113, 775)
 
 [connection signal="take_up" from="Mid/Coins/coin" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin2" to="." method="_on_coin_take_up"]

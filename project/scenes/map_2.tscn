@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cecmhya3e7tcg"]
+[gd_scene load_steps=21 format=4 uid="uid://cecmhya3e7tcg"]
 
 [ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://assets/sprites/world_tileset.png" id="1_gyd4n"]
 [ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://assets/sprites/fire_coral_fan.png" id="2_8mm5o"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/hide.gd" id="7_mcvwn"]
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="8_acdpv"]
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="9_agg0e"]
+[ext_resource type="Texture2D" uid="uid://srgrhi6cd5xj" path="res://icon.svg" id="10_kd3qu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vg1xx"]
 texture = ExtResource("1_gyd4n")
@@ -484,6 +485,10 @@ libraries = {
 "": SubResource("AnimationLibrary_xr3ol")
 }
 autoplay = "move"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(22, 651)
+texture = ExtResource("10_kd3qu")
 
 [connection signal="body_entered" from="Mid/Hides/Hide/Area2D" to="Mid/Hides/Hide" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Mid/Hides/Hide/Area2D" to="Mid/Hides/Hide" method="_on_area_2d_body_exited"]
