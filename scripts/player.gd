@@ -88,7 +88,7 @@ func update_velocity(delta: float) -> void:
 		remain_jump = 1
 		if is_rolling:
 			index_of_roll += 1
-			if index_of_roll == 6:
+			if index_of_roll == 5:
 				index_of_roll = 0
 				remain_roll = 1
 				print("roll_recover")

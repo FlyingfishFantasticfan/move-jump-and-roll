@@ -491,16 +491,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xf227")
+"texture": ExtResource("4_xdbv0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2jv8l")
+"texture": ExtResource("4_xdbv0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wdp3k")
+"texture": ExtResource("4_xdbv0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0veos")
+"texture": ExtResource("4_xdbv0")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_xdbv0")
@@ -550,10 +550,8 @@ one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qfd4w")
-animation = &"roll"
+animation = &"super_roll"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
 
 [node name="die" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_p4ksu")
