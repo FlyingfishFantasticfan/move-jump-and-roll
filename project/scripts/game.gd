@@ -39,8 +39,5 @@ func _on_coin_take_up() -> void:
 
 
 func _on_player_dead() -> void:
-	heath -= 1
-	if heath==0:
-		get_tree().reload_current_scene()
-		print("replay")
+
 	pass # Replace with function body.
