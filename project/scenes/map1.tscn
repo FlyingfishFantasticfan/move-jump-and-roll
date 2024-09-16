@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://opvf4kseu1b1"]
+[gd_scene load_steps=19 format=4 uid="uid://opvf4kseu1b1"]
 
 [ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://assets/sprites/world_tileset.png" id="1_0pacj"]
 [ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://assets/sprites/fire_coral_fan.png" id="2_dwuw4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6krkacapm545" path="res://scenes/revive_zone.tscn" id="5_iayww"]
 [ext_resource type="PackedScene" uid="uid://d2ljkqrohgve5" path="res://scenes/kill_zone.tscn" id="6_in1y0"]
 [ext_resource type="Script" path="res://scripts/hide.gd" id="7_ww580"]
+[ext_resource type="PackedScene" uid="uid://cgmtnjh37mjxy" path="res://scenes/player.tscn" id="8_7v7yt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g04qy"]
 texture = ExtResource("1_0pacj")
@@ -345,6 +346,8 @@ sources/1 = SubResource("TileSetAtlasSource_0g08c")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awx1s"]
 size = Vector2(77, 15.5571)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8n1gd"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r50sw"]
 texture = ExtResource("1_0pacj")
 0:0/0 = 0
@@ -478,6 +481,9 @@ texture = ExtResource("1_0pacj")
 [sub_resource type="TileSet" id="TileSet_qgc26"]
 sources/0 = SubResource("TileSetAtlasSource_r50sw")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq8yj"]
+size = Vector2(67, 57)
+
 [node name="Map" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -485,7 +491,7 @@ tile_map_data = PackedByteArray("AAAHAC0AAAAAAAEAAAAGAC0AAAAAAAEAAAAGAC4AAAAAAAE
 tile_set = SubResource("TileSet_rkb5f")
 
 [node name="Mid" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAADADIAAAAAAAEAAAAEADIAAAAAAAEAAAAFADIAAAAAAAEAAAAGADIAAAAAAAEAAAAHADIAAAAAAAEAAAAIADIAAAAAAAEAAAAJADIAAAAAAAEAAAAKADIAAAAAAAEAAAALADIAAAAAAAEAAAANADIAAAAAAAEAAAABADIAAAAAAAEAAAAMADIAAAAAAAEAAAACADIAAAAAAAEAAAAOADIAAAAAAAEAAAAPADIAAAAAAAEAAAAQADIAAAAAAAEAAAARADIAAAAAAAEAAAAAADIAAAAAAAEAAAD//zIAAAAAAAEAAAD+/zIAAAAAAAEAAAD9/zIAAAAAAAEAAAASADIAAQAAAAEAAAASADEAAQAAAAAAAAATADEAAQAAAAAAAAAUADEAAQAAAAAAAAAVADEAAQABAAAAAAATADIAAQAAAAEAAAAUADIAAQAAAAEAAAAVADIAAQAAAAEAAAAWADEAAQABAAAAAAAWADIAAQABAAEAAAA=")
+tile_map_data = PackedByteArray("AAADADIAAAAAAAEAAAAEADIAAAAAAAEAAAAFADIAAAAAAAEAAAAGADIAAAAAAAEAAAAHADIAAAAAAAEAAAAIADIAAAAAAAEAAAAJADIAAAAAAAEAAAAKADIAAAAAAAEAAAALADIAAAAAAAEAAAANADIAAAAAAAEAAAABADIAAAAAAAEAAAAMADIAAAAAAAEAAAACADIAAAAAAAEAAAAOADIAAAAAAAEAAAAPADIAAAAAAAEAAAAQADIAAAAAAAEAAAARADIAAAAAAAEAAAAAADIAAAAAAAEAAAD//zIAAAAAAAEAAAD+/zIAAAAAAAEAAAD9/zIAAAAAAAEAAAASADIAAQAAAAEAAAASADEAAQAAAAAAAAATADEAAQAAAAAAAAAUADEAAQAAAAAAAAAVADEAAQABAAAAAAATADIAAQAAAAEAAAAUADIAAQAAAAEAAAAVADIAAQAAAAEAAAAWADEAAQABAAAAAAAWADIAAQABAAEAAAAXADIAAQAAAAEAAAAYADIAAQAAAAEAAAAZADIAAQAAAAEAAAAaADIAAQAAAAEAAAAbADIAAQAAAAEAAAAbADEAAQAAAAEAAAAbADAAAQAAAAEAAAAaADAAAQAAAAEAAAAZADAAAQAAAAEAAAAZADEAAQAAAAEAAAAaADEAAQAAAAEAAAAaAC8AAQAAAAEAAAAZAC8AAQAAAAEAAAAZAC4AAQAAAAEAAAAYAC4AAQAAAAEAAAAXAC4AAQAAAAEAAAAWAC4AAQAAAAEAAAAVAC4AAQAAAAEAAAAUAC4AAQAAAAEAAAATAC4AAQAAAAEAAAASAC4AAQAAAAEAAAARAC0AAQAAAAEAAAAQAC0AAQAAAAEAAAAPAC0AAQAAAAEAAAAOAC0AAQAAAAEAAAAQAC4AAQAAAAEAAAARAC4AAQAAAAEAAAAVAC0AAQAAAAEAAAAVACwAAQAAAAEAAAAUACwAAQAAAAEAAAAUACsAAQAAAAEAAAATACsAAQAAAAEAAAASACsAAQAAAAEAAAASACwAAQAAAAEAAAARACwAAQAAAAEAAAASAC0AAQAAAAEAAAATAC0AAQAAAAEAAAAUAC0AAQAAAAEAAAATACwAAQAAAAEAAAA=")
 tile_set = SubResource("TileSet_nfbl7")
 
 [node name="Coins" type="Node2D" parent="Mid"]
@@ -499,15 +505,24 @@ position = Vector2(12, 761)
 [node name="coin3" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
 position = Vector2(103, 708)
 
+[node name="coin4" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
+position = Vector2(74, 760)
+
 [node name="Plateforms" type="Node2D" parent="Mid"]
 
 [node name="plateform" parent="Mid/Plateforms" instance=ExtResource("4_3efra")]
 position = Vector2(112, 798)
 
+[node name="plateform2" parent="Mid/Plateforms" instance=ExtResource("4_3efra")]
+position = Vector2(135, 749)
+
 [node name="CheckPoints" type="Node2D" parent="Mid"]
 position = Vector2(56, 794)
 
 [node name="revive_zone" parent="Mid/CheckPoints" instance=ExtResource("5_iayww")]
+
+[node name="revive_zone2" parent="Mid/CheckPoints" instance=ExtResource("5_iayww")]
+position = Vector2(-61, 0)
 
 [node name="KillZones" type="Node2D" parent="Mid"]
 
@@ -516,6 +531,12 @@ position = Vector2(56, 794)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mid/KillZones/kill_zone"]
 position = Vector2(329.5, 802.779)
 shape = SubResource("RectangleShape2D_awx1s")
+
+[node name="kill_zone2" parent="Mid/KillZones" instance=ExtResource("6_in1y0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mid/KillZones/kill_zone2"]
+position = Vector2(337, 722)
+shape = SubResource("WorldBoundaryShape2D_8n1gd")
 
 [node name="Hides" type="Node2D" parent="Mid"]
 
@@ -545,9 +566,31 @@ script = ExtResource("7_ww580")
 [node name="Area2D" type="Area2D" parent="Mid/Hides/Hide3"]
 collision_mask = 2
 
+[node name="Hide4" type="TileMapLayer" parent="Mid/Hides"]
+z_index = 6
+tile_map_data = PackedByteArray("AAANAC4AAAAAAAEAAAANAC8AAAAAAAEAAAANADAAAAAAAAEAAAANADEAAAAAAAEAAAAOADEAAAAAAAEAAAAPADEAAAAAAAEAAAAPADAAAAAAAAEAAAAQADAAAAAAAAEAAAAQAC8AAAAAAAEAAAAQAC4AAAAAAAEAAAAPAC4AAAAAAAEAAAAOAC4AAAAAAAEAAAAOAC8AAAAAAAEAAAAOADAAAAAAAAEAAAAPAC8AAAAAAAEAAAAOADIAAAAAAAEAAAANADIAAAAAAAEAAAANADMAAAAAAAEAAAAOADMAAAAAAAEAAAAPADMAAAAAAAEAAAAPADIAAAAAAAEAAAAQADIAAAAAAAEAAAARADIAAAAAAAEAAAARADEAAAAAAAEAAAARADAAAAAAAAEAAAARAC8AAAAAAAEAAAAQADEAAAAAAAEAAAAQADMAAAAAAAEAAAARADMAAAAAAAEAAAD6/y0AAAAAAAEAAAD6/y4AAAAAAAEAAAD5/y4AAAAAAAEAAAD5/y8AAAAAAAEAAAD4/y8AAAAAAAEAAAD4/zAAAAAAAAEAAAD5/zEAAAAAAAEAAAD6/zEAAAAAAAEAAAD7/zEAAAAAAAEAAAD8/zAAAAAAAAEAAAD8/y8AAAAAAAEAAAD8/y4AAAAAAAEAAAD7/y4AAAAAAAEAAAD6/y8AAAAAAAEAAAD4/zEAAAAAAAEAAAD4/zIAAAAAAAEAAAD4/zMAAAAAAAEAAAD5/zMAAAAAAAEAAAD6/zMAAAAAAAEAAAD7/zIAAAAAAAEAAAD8/zIAAAAAAAEAAAD8/zEAAAAAAAEAAAD9/zEAAAAAAAEAAAD9/zAAAAAAAAEAAAD9/y8AAAAAAAEAAAD7/y8AAAAAAAEAAAD6/zAAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_qgc26")
+script = ExtResource("7_ww580")
+
+[node name="Area2D" type="Area2D" parent="Mid/Hides/Hide4"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mid/Hides/Hide4/Area2D"]
+position = Vector2(-70.5, 783.5)
+shape = SubResource("RectangleShape2D_fq8yj")
+
+[node name="Player" parent="." instance=ExtResource("8_7v7yt")]
+position = Vector2(112, 775)
+collision_layer = 2
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+
 [connection signal="body_entered" from="Mid/Hides/Hide/Area2D" to="Mid/Hides/Hide" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Mid/Hides/Hide/Area2D" to="Mid/Hides/Hide" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Mid/Hides/Hide2/Area2D" to="Mid/Hides/Hide2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Mid/Hides/Hide2/Area2D" to="Mid/Hides/Hide2" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Mid/Hides/Hide3/Area2D" to="Mid/Hides/Hide3" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Mid/Hides/Hide3/Area2D" to="Mid/Hides/Hide3" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Mid/Hides/Hide4/Area2D" to="Mid/Hides/Hide4" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Mid/Hides/Hide4/Area2D" to="Mid/Hides/Hide4" method="_on_area_2d_body_exited"]
