@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cecmhya3e7tcg"]
+[gd_scene load_steps=21 format=4 uid="uid://cecmhya3e7tcg"]
 
 [ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://assets/sprites/world_tileset.png" id="1_gyd4n"]
 [ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://assets/sprites/fire_coral_fan.png" id="2_8mm5o"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/hide.gd" id="7_mcvwn"]
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="8_acdpv"]
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="9_agg0e"]
+[ext_resource type="Texture2D" uid="uid://srgrhi6cd5xj" path="res://icon.svg" id="10_kd3qu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vg1xx"]
 texture = ExtResource("1_gyd4n")
@@ -322,6 +323,33 @@ sources/0 = SubResource("TileSetAtlasSource_xefcq")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_foynx"]
 size = Vector2(67, 57)
 
+[sub_resource type="Animation" id="Animation_fxfvi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("slim:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(86, 788)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("slim:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_ue4nl"]
 resource_name = "move"
 length = 3.0
@@ -349,33 +377,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_fxfvi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("slim:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(86, 788)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("slim:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xr3ol"]
@@ -484,6 +485,10 @@ libraries = {
 "": SubResource("AnimationLibrary_xr3ol")
 }
 autoplay = "move"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(22, 651)
+texture = ExtResource("10_kd3qu")
 
 [connection signal="body_entered" from="Mid/Hides/Hide/Area2D" to="Mid/Hides/Hide" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Mid/Hides/Hide/Area2D" to="Mid/Hides/Hide" method="_on_area_2d_body_exited"]
