@@ -1,7 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 assets/
-新建 文本文档/
 
 # Godot-specific ignores
 .import/
