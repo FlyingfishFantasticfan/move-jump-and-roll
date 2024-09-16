@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=4 uid="uid://opvf4kseu1b1"]
 
 [ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://assets/sprites/world_tileset.png" id="1_0pacj"]
-[ext_resource type="Script" path="res://scripts/map1.gd" id="1_xlnej"]
+[ext_resource type="Script" path="res://scripts/map_1.gd" id="1_xlnej"]
 [ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://assets/sprites/fire_coral_fan.png" id="2_dwuw4"]
 [ext_resource type="PackedScene" uid="uid://cxutkj6p4e7l" path="res://scenes/coin.tscn" id="3_ecs1y"]
 [ext_resource type="PackedScene" uid="uid://d2ifkhjx8d3tm" path="res://scenes/plateform.tscn" id="4_3efra"]
