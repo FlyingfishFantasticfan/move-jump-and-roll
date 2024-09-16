@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://opvf4kseu1b1"]
+[gd_scene load_steps=19 format=4 uid="uid://opvf4kseu1b1"]
 
 [ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://assets/sprites/world_tileset.png" id="1_0pacj"]
 [ext_resource type="Script" path="res://scripts/map1.gd" id="1_xlnej"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b6krkacapm545" path="res://scenes/revive_zone.tscn" id="5_iayww"]
 [ext_resource type="PackedScene" uid="uid://d2ljkqrohgve5" path="res://scenes/kill_zone.tscn" id="6_in1y0"]
 [ext_resource type="Script" path="res://scripts/hide.gd" id="7_ww580"]
+[ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="9_2p0hy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g04qy"]
 texture = ExtResource("1_0pacj")
@@ -574,6 +575,8 @@ collision_mask = 2
 position = Vector2(-70.5, 783.5)
 shape = SubResource("RectangleShape2D_fq8yj")
 
+[node name="win_zone" parent="Mid" instance=ExtResource("9_2p0hy")]
+
 [connection signal="take_up" from="Mid/Coins/coin" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin2" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin3" to="." method="_on_coin_take_up"]
@@ -586,3 +589,4 @@ shape = SubResource("RectangleShape2D_fq8yj")
 [connection signal="body_exited" from="Mid/Hides/Hide3/Area2D" to="Mid/Hides/Hide3" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Mid/Hides/Hide4/Area2D" to="Mid/Hides/Hide4" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Mid/Hides/Hide4/Area2D" to="Mid/Hides/Hide4" method="_on_area_2d_body_exited"]
+[connection signal="win" from="Mid/win_zone" to="." method="_on_win_zone_win"]

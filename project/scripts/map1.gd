@@ -36,8 +36,6 @@ func _on_coin_take_up() -> void:
 	pass # Replace with function body.
 
 
-
-
-func _on_player_dead() -> void:
+func _on_win_zone_win() -> void:
 	
 	pass # Replace with function body.
