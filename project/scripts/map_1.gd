@@ -15,18 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("map"):
-		is_showing_map = not is_showing_map
-		if is_showing_map:
-			player.set_physics_process(true)
-			camera.offset.y = 0
-			camera.zoom.x = 1.5
-			camera.zoom.y = 1.5
-		else:
-			player.set_physics_process(false)
-			camera.offset.y = -500
-			camera.zoom.x = 0.5
-			camera.zoom.y = 0.5
+	pass
 			
 
 
