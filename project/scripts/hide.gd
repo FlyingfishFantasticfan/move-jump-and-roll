@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 @onready var area_2d: Area2D = $Area2D
-
+#你hi hi
 var defualt_color :Color
 var entered_color :Color
 

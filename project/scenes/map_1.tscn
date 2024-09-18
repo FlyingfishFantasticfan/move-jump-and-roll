@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://opvf4kseu1b1"]
+[gd_scene load_steps=23 format=4 uid="uid://opvf4kseu1b1"]
 
-[ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://scenes/assets/sprites/world_tileset.png" id="1_0pacj"]
+[ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://assets/sprites/world_tileset.png" id="1_0pacj"]
 [ext_resource type="Script" path="res://scripts/map_1.gd" id="1_xlnej"]
-[ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://scenes/assets/sprites/fire_coral_fan.png" id="2_dwuw4"]
+[ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://assets/sprites/fire_coral_fan.png" id="2_dwuw4"]
 [ext_resource type="PackedScene" uid="uid://cxutkj6p4e7l" path="res://scenes/coin.tscn" id="3_ecs1y"]
+[ext_resource type="PackedScene" uid="uid://cgmtnjh37mjxy" path="res://scenes/player.tscn" id="3_l58ic"]
 [ext_resource type="PackedScene" uid="uid://d2ifkhjx8d3tm" path="res://scenes/plateform.tscn" id="4_3efra"]
 [ext_resource type="PackedScene" uid="uid://b6krkacapm545" path="res://scenes/revive_zone.tscn" id="5_iayww"]
+[ext_resource type="PackedScene" uid="uid://d2ljkqrohgve5" path="res://scenes/kill_zone.tscn" id="9_2l7el"]
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="9_2p0hy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g04qy"]
@@ -337,46 +339,107 @@ margins = Vector2i(4, 0)
 0:1/0 = 0
 1:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f36mh"]
+texture = ExtResource("2_dwuw4")
+margins = Vector2i(4, 8)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0fnyo"]
+texture = ExtResource("2_dwuw4")
+margins = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_nfbl7"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_72g4w")
 sources/1 = SubResource("TileSetAtlasSource_7aslq")
+sources/2 = SubResource("TileSetAtlasSource_f36mh")
+sources/3 = SubResource("TileSetAtlasSource_0fnyo")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bssqf"]
+a = Vector2(31.2354, 9.6908)
+b = Vector2(-105.765, 9.6908)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bir4n"]
+a = Vector2(-17.1773, 0.681946)
+b = Vector2(11, 6)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sc7io"]
+a = Vector2(23.3074, 25.3483)
+b = Vector2(-1.6926, 6.34827)
+
+[sub_resource type="Animation" id="Animation_46rd1"]
+resource_name = "new_animation"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(641, 838), Vector2(800, 838)]
+}
+
+[sub_resource type="Animation" id="Animation_3soyy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(641, 838)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ykdu0"]
+_data = {
+"RESET": SubResource("Animation_3soyy"),
+"new_animation": SubResource("Animation_46rd1")
+}
 
 [node name="Map" type="Node2D"]
+z_index = 5
 script = ExtResource("1_xlnej")
 
 [node name="Background" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAHAC0AAAAAAAEAAAAGAC0AAAAAAAEAAAAGAC4AAAAAAAEAAAAGAC8AAAAAAAEAAAAHAC8AAAAAAAEAAAAIAC4AAAAAAAEAAAAJAC4AAAAAAAEAAAAJAC0AAAAAAAEAAAAJACwAAAAAAAEAAAAIACwAAAAAAAEAAAAIACsAAAAAAAEAAAAHACsAAAAAAAEAAAAGACsAAAAAAAEAAAAFACsAAAAAAAEAAAAEACsAAAAAAAEAAAADACsAAAAAAAEAAAADACwAAAAAAAEAAAACAC0AAAAAAAEAAAACAC4AAAAAAAEAAAADAC4AAAAAAAEAAAAEAC8AAAAAAAEAAAAFAC8AAAAAAAEAAAAIAC8AAAAAAAEAAAAKAC4AAAAAAAEAAAAKAC0AAAAAAAEAAAAKACwAAAAAAAEAAAAHACwAAAAAAAEAAAAGACwAAAAAAAEAAAAFACwAAAAAAAEAAAAFAC0AAAAAAAEAAAAHAC4AAAAAAAEAAAAEACwAAAAAAAEAAAACAC8AAAAAAAEAAAADAC8AAAAAAAEAAAAFAC4AAAAAAAEAAAAEAC0AAAAAAAEAAAADAC0AAAAAAAEAAAABAC4AAAAAAAEAAAAEAC4AAAAAAAEAAAAFADAAAAAAAAEAAAAFADEAAAAAAAEAAAAGADEAAAAAAAEAAAAHADEAAAAAAAEAAAAIADEAAAAAAAEAAAAJADEAAAAAAAEAAAAKADEAAAAAAAEAAAALADEAAAAAAAEAAAALADAAAAAAAAEAAAAKADAAAAAAAAEAAAAJADAAAAAAAAEAAAAIADAAAAAAAAEAAAAHADAAAAAAAAEAAAAGADAAAAAAAAEAAAAEADAAAAAAAAEAAAADADAAAAAAAAEAAAACADAAAAAAAAEAAAAMADAAAAAAAAEAAAANADAAAAAAAAEAAAABADAAAAAAAAEAAAAAADEAAAAAAAEAAAABADEAAAAAAAEAAAACADEAAAAAAAEAAAADADEAAAAAAAEAAAAEADIAAAAAAAEAAAAFADIAAAAAAAEAAAAGADIAAAAAAAEAAAAHADIAAAAAAAEAAAAIADIAAAAAAAEAAAAEADEAAAAAAAEAAAACADIAAAAAAAEAAAADADIAAAAAAAEAAAAJADIAAAAAAAEAAAAKADIAAAAAAAEAAAALADIAAAAAAAEAAAAMADIAAAAAAAEAAAAMADEAAAAAAAEAAAANADEAAAAAAAEAAAALAC4AAAAAAAEAAAALAC0AAAAAAAEAAAAIAC0AAAAAAAEAAAAMAC4AAAAAAAEAAAANAC4AAAAAAAEAAAAOAC4AAAAAAAEAAAAPAC4AAAAAAAEAAAANAC8AAAAAAAEAAAAMAC8AAAAAAAEAAAALAC8AAAAAAAEAAAAKAC8AAAAAAAEAAAAJAC8AAAAAAAEAAAABAC8AAAAAAAEAAAAAAC8AAAAAAAEAAAD//y8AAAAAAAEAAAAAADAAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_rkb5f")
 
+[node name="Player" parent="." instance=ExtResource("3_l58ic")]
+position = Vector2(111, 779)
+collision_layer = 2
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+
 [node name="Mid" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAADADIAAAAAAAEAAAAEADIAAAAAAAEAAAAFADIAAAAAAAEAAAAGADIAAAAAAAEAAAAHADIAAAAAAAEAAAAIADIAAAAAAAEAAAAJADIAAAAAAAEAAAAKADIAAAAAAAEAAAALADIAAAAAAAEAAAANADIAAAAAAAEAAAABADIAAAAAAAEAAAAMADIAAAAAAAEAAAACADIAAAAAAAEAAAAOADIAAAAAAAEAAAAPADIAAAAAAAEAAAAQADIAAAAAAAEAAAARADIAAAAAAAEAAAAAADIAAAAAAAEAAAD//zIAAAAAAAEAAAD+/zIAAAAAAAEAAAD9/zIAAAAAAAEAAAASADIAAQAAAAEAAAASADEAAQAAAAAAAAATADEAAQAAAAAAAAAUADEAAQAAAAAAAAAVADEAAQABAAAAAAATADIAAQAAAAEAAAAUADIAAQAAAAEAAAAVADIAAQAAAAEAAAAWADEAAQABAAAAAAAWADIAAQABAAEAAAAXADIAAQAAAAEAAAAYADIAAQAAAAEAAAAZADIAAQAAAAEAAAAaADIAAQAAAAEAAAAbADIAAQAAAAEAAAAbADEAAQAAAAEAAAAbADAAAQAAAAEAAAAaADAAAQAAAAEAAAAZADAAAQAAAAEAAAAZADEAAQAAAAEAAAAaADEAAQAAAAEAAAAaAC8AAQAAAAEAAAAZAC8AAQAAAAEAAAAZAC4AAQAAAAEAAAAYAC4AAQAAAAEAAAAXAC4AAQAAAAEAAAAWAC4AAQAAAAEAAAAVAC4AAQAAAAEAAAAUAC4AAQAAAAEAAAATAC4AAQAAAAEAAAASAC4AAQAAAAEAAAARAC0AAQAAAAEAAAAQAC0AAQAAAAEAAAAPAC0AAQAAAAEAAAAOAC0AAQAAAAEAAAAQAC4AAQAAAAEAAAARAC4AAQAAAAEAAAAVAC0AAQAAAAEAAAAVACwAAQAAAAEAAAAUACwAAQAAAAEAAAAUACsAAQAAAAEAAAATACsAAQAAAAEAAAASACsAAQAAAAEAAAASACwAAQAAAAEAAAARACwAAQAAAAEAAAASAC0AAQAAAAEAAAATAC0AAQAAAAEAAAAUAC0AAQAAAAEAAAATACwAAQAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAADADIAAAAAAAEAAAAEADIAAAAAAAEAAAAFADIAAAAAAAEAAAAGADIAAAAAAAEAAAAHADIAAAAAAAEAAAAIADIAAAAAAAEAAAAJADIAAAAAAAEAAAAKADIAAAAAAAEAAAALADIAAAAAAAEAAAANADIAAAAAAAEAAAABADIAAAAAAAEAAAAMADIAAAAAAAEAAAACADIAAAAAAAEAAAAOADIAAAAAAAEAAAAPADIAAAAAAAEAAAAQADIAAAAAAAEAAAAAADIAAAAAAAEAAAD//zIAAAAAAAEAAAD+/zIAAAAAAAEAAAD9/zIAAAAAAAEAAAARADMAAAAAAAEAAAARADQAAAAAAAEAAAASADQAAAAAAAEAAAATADQAAAAAAAEAAAAUADQAAAAAAAEAAAAVADQAAAAAAAEAAAAWADQAAAAAAAEAAAAXADQAAAAAAAEAAAAYADQAAAAAAAEAAAAZADQAAAAAAAEAAAAaADQAAAAAAAEAAAAbADQAAAAAAAEAAAAcADQAAAAAAAEAAAAdADQAAAAAAAEAAAAeADQAAAAAAAEAAAAfADQAAAAAAAEAAAARADIAAAAAAAEAAAASADIAAgABAAAAAAASADMAAgABAAEAAAATADIAAgAAAAAAAAATADMAAgAAAAEAAAAUADIAAgABAAAAAAAUADMAAgABAAEAAAAVADIAAgAAAAAAAAAVADMAAgAAAAEAAAAWADIAAgABAAAAAAAWADMAAgABAAEAAAAXADIAAgAAAAAAAAAXADMAAgAAAAEAAAAYADIAAgABAAAAAAAYADMAAgABAAEAAAAZADIAAgAAAAAAAAAZADMAAgAAAAEAAAAaADIAAgABAAAAAAAaADMAAgABAAEAAAAbADIAAQABAAAAAAAbADMAAQABAAEAAAAcADIAAQABAAAAAAAcADMAAQABAAEAAAAgADQAAAAAAAEAAAAhADQAAAAAAAEAAAAiADQAAAAAAAEAAAAjADQAAAAAAAEAAAAkADQAAAAAAAEAAAAlADQAAAAAAAEAAAAmADQAAAAAAAEAAAAdADMAAwABAAAAAAA=")
 tile_set = SubResource("TileSet_nfbl7")
 
 [node name="Coins" type="Node2D" parent="Mid"]
 
 [node name="coin" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-position = Vector2(176, 776)
-
-[node name="coin2" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-position = Vector2(12, 761)
-
-[node name="coin3" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-position = Vector2(103, 708)
-
-[node name="coin4" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-position = Vector2(74, 760)
-
-[node name="coin5" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-position = Vector2(57, 734)
+position = Vector2(461, 793)
 
 [node name="Plateforms" type="Node2D" parent="Mid"]
 
 [node name="plateform" parent="Mid/Plateforms" instance=ExtResource("4_3efra")]
 position = Vector2(112, 798)
-
-[node name="plateform2" parent="Mid/Plateforms" instance=ExtResource("4_3efra")]
-position = Vector2(135, 749)
 
 [node name="CheckPoints" type="Node2D" parent="Mid"]
 position = Vector2(56, 794)
@@ -385,9 +448,30 @@ position = Vector2(56, 794)
 
 [node name="win_zone" parent="Mid" instance=ExtResource("9_2p0hy")]
 
+[node name="kills" type="Node2D" parent="Mid"]
+
+[node name="kill_zone" parent="Mid/kills" instance=ExtResource("9_2l7el")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mid/kills/kill_zone"]
+position = Vector2(392.765, 794.309)
+shape = SubResource("SegmentShape2D_bssqf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Mid/kills/kill_zone"]
+position = Vector2(441, 806)
+shape = SubResource("SegmentShape2D_bir4n")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Mid/kills/kill_zone"]
+position = Vector2(455.693, 805.652)
+shape = SubResource("SegmentShape2D_sc7io")
+
+[node name="plateform" parent="Mid" instance=ExtResource("4_3efra")]
+position = Vector2(641, 838)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mid/plateform"]
+libraries = {
+"": SubResource("AnimationLibrary_ykdu0")
+}
+autoplay = "new_animation"
+
 [connection signal="take_up" from="Mid/Coins/coin" to="." method="_on_coin_take_up"]
-[connection signal="take_up" from="Mid/Coins/coin2" to="." method="_on_coin_take_up"]
-[connection signal="take_up" from="Mid/Coins/coin3" to="." method="_on_coin_take_up"]
-[connection signal="take_up" from="Mid/Coins/coin4" to="." method="_on_coin_take_up"]
-[connection signal="take_up" from="Mid/Coins/coin5" to="." method="_on_coin_take_up"]
 [connection signal="win" from="Mid/win_zone" to="." method="_on_win_zone_win"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=4 uid="uid://cecmhya3e7tcg"]
+[gd_scene load_steps=19 format=4 uid="uid://cecmhya3e7tcg"]
 
-[ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://scenes/assets/sprites/world_tileset.png" id="1_gyd4n"]
-[ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://scenes/assets/sprites/fire_coral_fan.png" id="2_8mm5o"]
+[ext_resource type="Texture2D" path="res://scenes/assets/sprites/world_tileset.png" id="1_gyd4n"]
+[ext_resource type="Texture2D" path="res://scenes/assets/sprites/fire_coral_fan.png" id="2_8mm5o"]
 [ext_resource type="PackedScene" uid="uid://cxutkj6p4e7l" path="res://scenes/coin.tscn" id="3_l1f8a"]
+[ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://assets/sprites/fire_coral_fan.png" id="3_u2sg5"]
 [ext_resource type="PackedScene" uid="uid://d2ifkhjx8d3tm" path="res://scenes/plateform.tscn" id="4_y4lsp"]
 [ext_resource type="PackedScene" uid="uid://b6krkacapm545" path="res://scenes/revive_zone.tscn" id="5_am2r2"]
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="8_acdpv"]
@@ -178,10 +179,19 @@ margins = Vector2i(4, 0)
 0:1/0 = 0
 1:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x7f4s"]
+texture = ExtResource("3_u2sg5")
+margins = Vector2i(4, 8)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_3g5lm"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vg1xx")
 sources/1 = SubResource("TileSetAtlasSource_wabi6")
+sources/2 = SubResource("TileSetAtlasSource_x7f4s")
 
 [sub_resource type="Animation" id="Animation_fxfvi"]
 length = 0.001
@@ -251,6 +261,7 @@ size = Vector2(126, 117.631)
 [node name="Map2" type="Node2D"]
 
 [node name="Mid" type="TileMapLayer" parent="."]
+position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAADADIAAAAAAAEAAAAEADIAAAAAAAEAAAAFADIAAAAAAAEAAAAGADIAAAAAAAEAAAAHADIAAAAAAAEAAAAIADIAAAAAAAEAAAAJADIAAAAAAAEAAAAKADIAAAAAAAEAAAALADIAAAAAAAEAAAANADIAAAAAAAEAAAABADIAAAAAAAEAAAAMADIAAAAAAAEAAAACADIAAAAAAAEAAAAOADIAAAAAAAEAAAAPADIAAAAAAAEAAAAQADIAAAAAAAEAAAARADIAAAAAAAEAAAAAADIAAAAAAAEAAAD//zIAAAAAAAEAAAD+/zIAAAAAAAEAAAD9/zIAAAAAAAEAAAASADIAAQAAAAEAAAASADEAAQAAAAAAAAATADEAAQAAAAAAAAAUADEAAQAAAAAAAAAVADEAAQABAAAAAAATADIAAQAAAAEAAAAUADIAAQAAAAEAAAAVADIAAQAAAAEAAAAWADEAAQABAAAAAAAWADIAAQABAAEAAAAXADIAAQAAAAEAAAAYADIAAQAAAAEAAAAZADIAAQAAAAEAAAAaADIAAQAAAAEAAAAbADIAAQAAAAEAAAAbADEAAQAAAAEAAAAbADAAAQAAAAEAAAAaADAAAQAAAAEAAAAZADAAAQAAAAEAAAAZADEAAQAAAAEAAAAaADEAAQAAAAEAAAAaAC8AAQAAAAEAAAAZAC8AAQAAAAEAAAAZAC4AAQAAAAEAAAAYAC4AAQAAAAEAAAAXAC4AAQAAAAEAAAAWAC4AAQAAAAEAAAAVAC4AAQAAAAEAAAAUAC4AAQAAAAEAAAATAC4AAQAAAAEAAAASAC4AAQAAAAEAAAARAC0AAQAAAAEAAAAQAC0AAQAAAAEAAAAPAC0AAQAAAAEAAAAOAC0AAQAAAAEAAAAQAC4AAQAAAAEAAAARAC4AAQAAAAEAAAAVAC0AAQAAAAEAAAAVACwAAQAAAAEAAAAUACwAAQAAAAEAAAAUACsAAQAAAAEAAAATACsAAQAAAAEAAAASACsAAQAAAAEAAAASACwAAQAAAAEAAAARACwAAQAAAAEAAAASAC0AAQAAAAEAAAATAC0AAQAAAAEAAAAUAC0AAQAAAAEAAAATACwAAQAAAAEAAAA=")
 tile_set = SubResource("TileSet_3g5lm")
 
