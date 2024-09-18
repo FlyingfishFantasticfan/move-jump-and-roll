@@ -37,8 +37,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	update_velocity(delta)
-	update_animation()
 	move_and_slide()
+	update_animation()
+	
 
 func update_velocity(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
@@ -109,23 +110,17 @@ func update_velocity(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY * 0.75
 		else:
 			velocity.y = JUMP_VELOCITY
-		
-
-	
-	
-	
-	if direction:
-		if is_super_jump:
+			
+	if is_super_jump:
 			if direction > 0:
 				velocity.x = SPEED * 2.95
 			elif direction < 0:
-				velocity.x = SPEED * -2.95
-		else:
+				velocity.x = SPEED * -2.95	
+	else: 
+		if  direction:
 			velocity.x = direction * SPEED
-		if is_rolling:
-			velocity.x *= rolling_speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 
 func update_animation() ->void:
