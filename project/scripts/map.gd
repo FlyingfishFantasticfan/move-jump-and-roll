@@ -6,7 +6,8 @@ extends Node2D
 var heath : int = 5
 var score : int = 0
 
-var is_showing_map : bool = false
+
+var is_winning : bool =false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +18,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	if is_winning:
+		player.set_physics_process(false)
+		if Input.is_action_just_pressed("resume"):
+			get_tree().change_scene_to_file("res://scenes/game.tscn")
 	pass
 			
 
@@ -28,5 +33,5 @@ func _on_coin_take_up() -> void:
 
 
 func _on_win_zone_win() -> void:
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	is_winning = true
 	pass # Replace with function body.
