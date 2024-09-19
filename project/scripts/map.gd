@@ -15,6 +15,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("exit"):
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
 	pass
 			
 
@@ -26,5 +28,5 @@ func _on_coin_take_up() -> void:
 
 
 func _on_win_zone_win() -> void:
-	
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	pass # Replace with function body.
