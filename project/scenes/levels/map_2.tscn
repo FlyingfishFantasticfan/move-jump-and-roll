@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cecmhya3e7tcg"]
+[gd_scene load_steps=33 format=4 uid="uid://cecmhya3e7tcg"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_7u7hq"]
 [ext_resource type="PackedScene" uid="uid://cgmtnjh37mjxy" path="res://scenes/player.tscn" id="2_eu3m6"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="8_mrm61"]
 [ext_resource type="PackedScene" uid="uid://d2ljkqrohgve5" path="res://scenes/kill_zone.tscn" id="9_hlulq"]
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="10_0vs5k"]
-[ext_resource type="AudioStream" uid="uid://b3e6qu4ws2b8w" path="res://assets/music/map2.mp3" id="10_bg8xd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qodg4"]
 texture = ExtResource("3_edb6d")
@@ -563,7 +562,6 @@ libraries = {
 autoplay = "move"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_bg8xd")
 volume_db = -12.0
 autoplay = true
 
