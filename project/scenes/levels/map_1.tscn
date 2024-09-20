@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="9_2p0hy"]
 [ext_resource type="PackedScene" uid="uid://70us3ga0puej" path="res://scenes/hider.tscn" id="10_4mmxx"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g04qy"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0g8m"]
 texture = ExtResource("1_0pacj")
 0:0/0 = 0
 0:0/0/modulate = Color(0.219501, 0.219501, 0.219501, 1)
@@ -170,7 +170,7 @@ texture = ExtResource("1_0pacj")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rkb5f"]
-sources/0 = SubResource("TileSetAtlasSource_g04qy")
+sources/0 = SubResource("TileSetAtlasSource_n0g8m")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbxj1"]
 texture = ExtResource("1_0pacj")
