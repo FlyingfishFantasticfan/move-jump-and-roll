@@ -18,3 +18,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("关卡2"):
 		get_tree().change_scene_to_file(MAP_2.resource_path)
 	
+
+
+func _on_button_2_button_down() -> void:
+	get_tree().change_scene_to_file(MAP_1.resource_path)
+	pass # Replace with function body.
+
+
+func _on_button_button_down() -> void:
+	get_tree().change_scene_to_file(MAP_2.resource_path)
+	pass # Replace with function body.
