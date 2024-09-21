@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfsspnafbuq3g"]
+
+[ext_resource type="Script" path="res://scripts/map.gd" id="1_7og5o"]
+[ext_resource type="PackedScene" uid="uid://cgmtnjh37mjxy" path="res://scenes/player.tscn" id="2_6qxb7"]
+
+[node name="Map_3" type="Node2D"]
+script = ExtResource("1_7og5o")
+
+[node name="Background" type="TileMapLayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_6qxb7")]
+z_index = 5
+position = Vector2(111, 761)
+collision_layer = 2
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-0.0326385, -0.046936)
+zoom = Vector2(1.8, 1.8)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.3
+drag_right_margin = 0.1
+editor_draw_drag_margin = true
+
+[node name="Mid" type="TileMapLayer" parent="."]
+
+[node name="Coins" type="Node2D" parent="Mid"]
+
+[node name="Plateforms" type="Node2D" parent="Mid"]
+
+[node name="CheckPoints" type="Node2D" parent="Mid"]
+
+[node name="Kills" type="Node2D" parent="Mid"]
+
+[node name="Enemys" type="Node2D" parent="Mid"]
+
+[node name="Hiders" type="Node2D" parent="Mid"]
