@@ -499,11 +499,12 @@ tile_set = SubResource("TileSet_rkb5f")
 
 [node name="Player" parent="." instance=ExtResource("3_l58ic")]
 z_index = 5
-position = Vector2(29.1655, 696.909)
+position = Vector2(112, 756)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-0.0326385, -0.046936)
+zoom = Vector2(1.8, 1.8)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
