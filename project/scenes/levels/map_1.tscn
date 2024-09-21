@@ -636,123 +636,123 @@ position = Vector2(2925, 708)
 position = Vector2(107, 35)
 shape = SubResource("RectangleShape2D_0cgnu")
 
-[node name="kills" type="Node2D" parent="Mid"]
+[node name="Kills" type="Node2D" parent="Mid"]
 
-[node name="kill_zone" parent="Mid/kills" instance=ExtResource("9_2l7el")]
+[node name="kill_zone" parent="Mid/Kills" instance=ExtResource("9_2l7el")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mid/kills/kill_zone"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mid/Kills/kill_zone"]
 position = Vector2(314.041, 785.557)
 polygon = PackedVector2Array(-26.0409, 16.4429, 103.959, 16.4429, 111.959, 18.4429, 119.959, 23.4429, 122.959, 26.4429, 143.959, 26.4429, 155.959, 34.4429, 160.959, 37.4429, 165.959, 42.4429, 165.959, 47.4429, -26.0409, 47.4429)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Mid/kills/kill_zone"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Mid/Kills/kill_zone"]
 position = Vector2(755, 1244)
 shape = SubResource("WorldBoundaryShape2D_aw81q")
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Mid/kills/kill_zone"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Mid/Kills/kill_zone"]
 position = Vector2(-60.9428, 894.69)
 polygon = PackedVector2Array(12.9428, 13.3096, 12.9428, 34.3096, 60.9428, 34.3096, 60.9428, 23.3096, 59.9428, 16.3096, 54.9428, 13.3096, 46.9428, 13.3096, 43.9428, 8.30957, 38.9428, 5.30957, 33.9428, 5.30957, 28.9428, 3.30957, 25.9428, 3.30957, 20.9428, 5.30957, 16.9428, 8.30957)
 
-[node name="enemys" type="Node2D" parent="Mid"]
+[node name="Enemys" type="Node2D" parent="Mid"]
 position = Vector2(2457.7, 898.716)
 
-[node name="slim" parent="Mid/enemys" instance=ExtResource("10_ngcp5")]
+[node name="slim" parent="Mid/Enemys" instance=ExtResource("10_ngcp5")]
 position = Vector2(-2, 2)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Mid/enemys/slim"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mid/Enemys/slim"]
 libraries = {
 "": SubResource("AnimationLibrary_mthql")
 }
 autoplay = "move"
 
-[node name="slim2" parent="Mid/enemys" instance=ExtResource("10_ngcp5")]
+[node name="slim2" parent="Mid/Enemys" instance=ExtResource("10_ngcp5")]
 position = Vector2(320, 2)
 flip_h = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Mid/enemys/slim2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mid/Enemys/slim2"]
 libraries = {
 "": SubResource("AnimationLibrary_pa7ck")
 }
 autoplay = "new_animation"
 
-[node name="hiders" type="Node2D" parent="."]
+[node name="Hiders" type="Node2D" parent="."]
 
-[node name="Hider" parent="hiders" instance=ExtResource("10_4mmxx")]
+[node name="Hider" parent="Hiders" instance=ExtResource("10_4mmxx")]
 tile_map_data = PackedByteArray("AABMADYAAAAAAAEAAABNADYAAAABAAAAAABNADcAAAAAAAEAAABMADcAAAAAAAEAAABMADgAAAAAAAEAAABNADgAAAAAAAEAAABOADgAAAAAAAEAAABPADgAAAAAAAEAAABQADgAAAAAAAEAAABRADgAAAAAAAEAAABRADkAAAAAAAEAAABRADoAAAAAAAEAAABRADsAAAAAAAEAAABQADsAAAAAAAEAAABPADsAAAAAAAEAAABOADsAAAAAAAEAAABNADsAAAAAAAEAAABNADoAAAAAAAEAAABNADkAAAAAAAEAAABOADkAAAAAAAEAAABPADkAAAAAAAEAAABQADkAAAAAAAEAAABQADoAAAAAAAEAAABPADoAAAAAAAEAAABOADoAAAAAAAEAAABMADkAAAAAAAEAAABLADkAAAAAAAEAAABLADgAAAAAAAEAAABKADgAAAAAAAEAAABJADgAAAAAAAEAAABIADgAAAAAAAEAAABIADkAAAAAAAEAAABIADoAAAAAAAEAAABIADsAAAAAAAEAAABJADsAAAAAAAEAAABKADsAAAAAAAEAAABLADsAAAAAAAEAAABLADoAAAAAAAEAAABKADoAAAAAAAEAAABKADkAAAAAAAEAAABJADkAAAAAAAEAAABJADoAAAAAAAEAAAA=")
 
-[node name="Area2D" type="Area2D" parent="hiders/Hider"]
+[node name="Area2D" type="Area2D" parent="Hiders/Hider"]
 collision_mask = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hiders/Hider/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hiders/Hider/Area2D"]
 position = Vector2(1222.14, 897.448)
 polygon = PackedVector2Array(89.8625, -1.44806, 89.8625, 62.5519, 9.86255, 62.5519, 9.86255, 30.5519, -6.13745, 30.5519, -6.13745, 62.5519, -70.1375, 62.5519, -70.1375, -1.44806, -6.13745, -1.44806, -6.13745, -32.4481, 25.8625, -32.4481, 25.8625, -1.44806)
 
-[node name="Hider2" parent="hiders" instance=ExtResource("10_4mmxx")]
+[node name="Hider2" parent="Hiders" instance=ExtResource("10_4mmxx")]
 tile_map_data = PackedByteArray("AABNADEAAAAGAAkAAABOADEAAAAGAAkAAABPADEAAAAGAAkAAABQADEAAAAGAAkAAABRADEAAAAGAAkAAABSADEAAAAGAAkAAABTADEAAAAGAAkAAABUADEAAAAGAAkAAABVADEAAAAGAAkAAABWADEAAAAGAAkAAABXADEAAAAGAAkAAABYADEAAAAGAAkAAABZADEAAAAGAAkAAABaADEAAAAGAAkAAABbADEAAAAGAAkAAABcADEAAAAGAAkAAABdADEAAAAGAAkAAABeADEAAAAGAAkAAABfADEAAAAGAAkAAABgADEAAAAGAAkAAABhADEAAAAGAAkAAABiADEAAAAGAAkAAABjADEAAAAGAAkAAABkADEAAAAGAAkAAABlADEAAAAGAAkAAABmADEAAAAGAAkAAABNADIAAAAGAAoAAABNADMAAAAGAAoAAABNADQAAAAGAAoAAABMADQAAAAGAAoAAABMADMAAAAGAAoAAABMADUAAAAGAAoAAABLADUAAAAGAAoAAABLADQAAAAGAAoAAABKADUAAAAGAAoAAABNADUAAAAGAAoAAABOADUAAAAGAAoAAABPADUAAAAGAAoAAABQADUAAAAGAAoAAABPADQAAAAGAAoAAABOADQAAAAGAAoAAABOADMAAAAGAAoAAABOADIAAAAGAAoAAABPADIAAAAGAAoAAABQADIAAAAGAAoAAABRADIAAAAGAAoAAABSADIAAAAGAAoAAABTADIAAAAGAAoAAABUADIAAAAGAAoAAABVADIAAAAGAAoAAABWADIAAAAGAAoAAABXADIAAAAGAAoAAABYADIAAAAGAAoAAABZADIAAAAGAAoAAABaADIAAAAGAAoAAABbADIAAAAGAAoAAABcADIAAAAGAAoAAABdADIAAAAGAAoAAABeADIAAAAGAAoAAABfADIAAAAGAAoAAABgADIAAAAGAAoAAABhADIAAAAGAAoAAABiADIAAAAGAAoAAABjADIAAAAGAAoAAABkADIAAAAGAAoAAABlADIAAAAGAAoAAABmADIAAAAGAAoAAABmADMAAAAGAAoAAABmADQAAAAGAAoAAABmADUAAAAGAAoAAABlADUAAAAGAAoAAABkADUAAAAGAAoAAABjADUAAAAGAAoAAABiADUAAAAGAAoAAABhADUAAAAGAAoAAABgADUAAAAGAAoAAABfADUAAAAGAAoAAABeADUAAAAGAAoAAABdADUAAAAGAAoAAABcADUAAAAGAAoAAABbADUAAAAGAAoAAABaADUAAAAGAAoAAABZADUAAAAGAAoAAABYADUAAAAGAAoAAABXADUAAAAGAAoAAABWADUAAAAGAAoAAABVADUAAAAGAAoAAABUADUAAAAGAAoAAABTADUAAAAGAAoAAABSADUAAAAGAAoAAABRADUAAAAGAAoAAABQADQAAAAGAAoAAABPADMAAAAGAAoAAABQADMAAAAGAAoAAABRADMAAAAGAAoAAABSADMAAAAGAAoAAABTADMAAAAGAAoAAABUADMAAAAGAAoAAABVADMAAAAGAAoAAABWADMAAAAGAAoAAABXADMAAAAGAAoAAABRADQAAAAGAAoAAABSADQAAAAGAAoAAABTADQAAAAGAAoAAABUADQAAAAGAAoAAABVADQAAAAGAAoAAABWADQAAAAGAAoAAABXADQAAAAGAAoAAABYADQAAAAGAAoAAABZADQAAAAGAAoAAABaADQAAAAGAAoAAABbADQAAAAGAAoAAABcADQAAAAGAAoAAABdADQAAAAGAAoAAABeADQAAAAGAAoAAABfADQAAAAGAAoAAABgADQAAAAGAAoAAABgADMAAAAGAAoAAABfADMAAAAGAAoAAABeADMAAAAGAAoAAABdADMAAAAGAAoAAABYADMAAAAGAAoAAABZADMAAAAGAAoAAABaADMAAAAGAAoAAABbADMAAAAGAAoAAABcADMAAAAGAAoAAABhADMAAAAGAAoAAABiADMAAAAGAAoAAABjADMAAAAGAAoAAABkADMAAAAGAAoAAABlADMAAAAGAAoAAABlADQAAAAGAAoAAABkADQAAAAGAAoAAABjADQAAAAGAAoAAABiADQAAAAGAAoAAABhADQAAAAGAAoAAABnADUAAAABAAAAAABnADQAAAAAAAEAAAA=")
 
-[node name="Area2D" type="Area2D" parent="hiders/Hider2"]
+[node name="Area2D" type="Area2D" parent="Hiders/Hider2"]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hiders/Hider2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hiders/Hider2/Area2D"]
 position = Vector2(1374.23, 807.478)
 shape = SubResource("SegmentShape2D_f40hu")
 
-[node name="Hider3" parent="hiders" instance=ExtResource("10_4mmxx")]
+[node name="Hider3" parent="Hiders" instance=ExtResource("10_4mmxx")]
 tile_map_data = PackedByteArray("AAB1ACwAAAAAAAEAAABpADUAAAAAAAEAAABoADUAAAAAAAEAAABoADQAAAAAAAEAAABoADMAAAAAAAEAAABoADIAAAAAAAEAAABoADEAAAAAAAEAAABpADEAAAAAAAEAAABpADAAAAAAAAEAAABqADAAAAAAAAEAAABqADEAAAAAAAEAAABpADIAAAAAAAEAAABpADMAAAAAAAEAAABpADQAAAAAAAEAAABqADIAAAAAAAEAAABrADIAAAAAAAEAAABsADIAAAAAAAEAAABtADIAAAAAAAEAAABtADEAAAAAAAEAAABtADAAAAAAAAEAAABsADAAAAAAAAEAAABrADAAAAAAAAEAAABrADEAAAAAAAEAAABsADEAAAAAAAEAAABrAC8AAAAAAAEAAABqAC8AAAAAAAEAAABrAC4AAAAAAAEAAABsAC4AAAAAAAEAAABsAC8AAAAAAAEAAABtAC8AAAAAAAEAAABuAC8AAAAAAAEAAABuAC4AAAAAAAEAAABtAC4AAAAAAAEAAABuACsAAAAAAAEAAABvACsAAAAAAAEAAABvACwAAAAAAAEAAABwACwAAAAAAAEAAABwAC0AAAAAAAEAAABvAC0AAAAAAAEAAABvAC4AAAAAAAEAAABuAC0AAAAAAAEAAABtAC0AAAAAAAEAAABsAC0AAAAAAAEAAABuACwAAAAAAAEAAABtACwAAAAAAAEAAABxACwAAAAAAAEAAAByACwAAAAAAAEAAABzACwAAAAAAAEAAAB0ACwAAAAAAAEAAAB0ACsAAAAAAAEAAAB0ACoAAAAAAAEAAABzACoAAAAAAAEAAAByACoAAAAAAAEAAABxACoAAAAAAAEAAABwACoAAAAAAAEAAABwACsAAAAAAAEAAABxACsAAAAAAAEAAAByACsAAAAAAAEAAABzACsAAAAAAAEAAAB1ACsAAAAAAAEAAAA=")
 
-[node name="Area2D" type="Area2D" parent="hiders/Hider3"]
+[node name="Area2D" type="Area2D" parent="Hiders/Hider3"]
 collision_mask = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hiders/Hider3/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hiders/Hider3/Area2D"]
 position = Vector2(1726.47, 789.194)
 polygon = PackedVector2Array(-62.4701, 74.8058, -30.4701, 74.8058, -30.4701, 26.8058, 33.5299, 26.8058, 33.5299, -21.1942, 49.5299, -21.1942, 49.5299, -37.1942, 65.5299, -37.1942, 65.5299, -53.1942, 81.5299, -53.1942, 81.5299, -69.1942, 145.53, -69.1942, 145.53, -116.194, 65.5299, -116.194, 65.5299, -100.194, 33.5299, -100.194, 33.5299, -85.1942, 17.5299, -85.1942, 17.5299, -69.1942, 1.52991, -69.1942, 1.52991, -53.1942, -14.4701, -53.1942, -14.4701, -37.1942, -30.4701, -37.1942, -30.4701, -21.1942, -46.4701, -21.1942, -46.4701, -5.19421, -62.4701, -5.19421)
 
-[node name="Hider4" parent="hiders" instance=ExtResource("10_4mmxx")]
+[node name="Hider4" parent="Hiders" instance=ExtResource("10_4mmxx")]
 tile_map_data = PackedByteArray("AABIADwAAAABAAEAAABJAD0AAAABAAEAAABKADwAAAABAAEAAABLAD0AAAABAAEAAABJADwAAAABAAAAAABIAD0AAAABAAAAAABKAD0AAAABAAAAAABLADwAAAABAAAAAABIAD4AAAAAAAEAAABIAD8AAAAAAAEAAABJAD8AAAAAAAEAAABJAEAAAAAAAAEAAABIAEEAAAAAAAEAAABIAEAAAAAAAAEAAABJAD4AAAAAAAEAAABKAD4AAAAAAAEAAABLAD4AAAAAAAEAAABLAD8AAAAAAAEAAABKAD8AAAAAAAEAAABKAEAAAAAAAAEAAABLAEAAAAAAAAEAAABKAEEAAAAAAAEAAABJAEEAAAAAAAEAAABIAEIAAAAAAAEAAAA=")
 
-[node name="Area2D" type="Area2D" parent="hiders/Hider4"]
+[node name="Area2D" type="Area2D" parent="Hiders/Hider4"]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hiders/Hider4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hiders/Hider4/Area2D"]
 position = Vector2(1184, 976)
 shape = SubResource("RectangleShape2D_erubr")
 
-[node name="Hider5" parent="hiders" instance=ExtResource("10_4mmxx")]
+[node name="Hider5" parent="Hiders" instance=ExtResource("10_4mmxx")]
 tile_map_data = PackedByteArray("AAC/ADYAAAAGAAoAAADAADYAAAAGAAoAAADBADYAAAAGAAoAAADCADYAAAAGAAoAAADDADYAAAAGAAoAAADEADYAAAAGAAoAAADFADYAAAAGAAoAAADGADYAAAAGAAoAAADHADYAAAAGAAoAAADIADYAAAAGAAoAAADJADYAAAAGAAoAAADKADYAAAAGAAoAAADLADYAAAAGAAoAAADCADcAAAAGAAoAAADDADcAAAAGAAoAAADEADcAAAAGAAoAAADFADcAAAAGAAoAAADGADcAAAAGAAoAAADHADcAAAAGAAoAAADIADcAAAAGAAoAAADJADcAAAAGAAoAAAC+ADUAAAAGAAkAAAC/ADUAAAAGAAkAAADAADUAAAAGAAkAAADBADUAAAAGAAkAAADCADUAAAAGAAkAAADDADUAAAAGAAkAAADEADUAAAAGAAkAAADFADUAAAAGAAkAAADGADUAAAAGAAkAAADHADUAAAAGAAkAAADIADUAAAAGAAkAAADJADUAAAAGAAkAAADKADUAAAAGAAkAAADLADUAAAAGAAkAAADMADUAAAAGAAkAAAA=")
 
-[node name="Area2D" type="Area2D" parent="hiders/Hider5"]
+[node name="Area2D" type="Area2D" parent="Hiders/Hider5"]
 collision_mask = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hiders/Hider5/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hiders/Hider5/Area2D"]
 position = Vector2(3167.84, 807.748)
 polygon = PackedVector2Array(-127.836, 42.252, -127.836, 56.252, -111.836, 56.252, -111.836, 72.252, -63.8359, 72.252, -63.8359, 88.252, 64.1641, 88.252, 64.1641, 72.252, 96.1641, 72.252, 96.1641, 56.252, 112.164, 56.252, 112.164, 42.252)
 
-[node name="Hider6" parent="hiders" instance=ExtResource("10_4mmxx")]
+[node name="Hider6" parent="Hiders" instance=ExtResource("10_4mmxx")]
 tile_map_data = PackedByteArray("AAC4ADIAAAAAAAEAAAC3ADIAAAAAAAEAAAC2ADIAAAAAAAEAAAC2ADMAAAAAAAEAAAC1ADMAAAAAAAEAAAC1ADQAAAAAAAEAAAC0ADQAAAAAAAEAAAC0ADMAAAAAAAEAAAC1ADIAAAAAAAEAAAA=")
 
-[node name="Area2D" type="Area2D" parent="hiders/Hider6"]
+[node name="Area2D" type="Area2D" parent="Hiders/Hider6"]
 collision_mask = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hiders/Hider6/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hiders/Hider6/Area2D"]
 position = Vector2(2941.5, 839.561)
 polygon = PackedVector2Array(-45.4993, -23.561, -61.4993, -23.561, -61.4993, 8.43896, -29.4993, 8.43896, -29.4993, -7.56104, -13.4993, -7.56104, -13.4993, -23.561, 18.5007, -23.561, 18.5007, -39.561, -45.4993, -39.561)
 
-[node name="Hider7" parent="hiders" instance=ExtResource("10_4mmxx")]
+[node name="Hider7" parent="Hiders" instance=ExtResource("10_4mmxx")]
 tile_map_data = PackedByteArray("AADGADkAAAAAAAEAAADGADoAAAAAAAEAAADGADgAAAABAAAAAADFADgAAAABAAAAAADFADoAAAAAAAEAAADFADkAAAAAAAEAAAA=")
 
-[node name="Area2D" type="Area2D" parent="hiders/Hider7"]
+[node name="Area2D" type="Area2D" parent="Hiders/Hider7"]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hiders/Hider7/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hiders/Hider7/Area2D"]
 position = Vector2(3168, 920)
 shape = SubResource("RectangleShape2D_8ox1a")
 
-[node name="Hider8" parent="hiders" instance=ExtResource("10_4mmxx")]
+[node name="Hider8" parent="Hiders" instance=ExtResource("10_4mmxx")]
 tile_map_data = PackedByteArray("AABaAC0AAAAAAAAAAABbAC0AAAAAAAAAAABcAC0AAAAAAAAAAABdAC0AAAAAAAAAAAA=")
 
-[node name="Area2D" type="Area2D" parent="hiders/Hider8"]
+[node name="Area2D" type="Area2D" parent="Hiders/Hider8"]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hiders/Hider8/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hiders/Hider8/Area2D"]
 position = Vector2(1472, 728)
 shape = SubResource("RectangleShape2D_0oa3c")
 
