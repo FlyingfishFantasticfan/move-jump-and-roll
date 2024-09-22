@@ -1,9 +1,10 @@
-[gd_scene load_steps=45 format=4 uid="uid://cecmhya3e7tcg"]
+[gd_scene load_steps=46 format=4 uid="uid://cecmhya3e7tcg"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_7u7hq"]
 [ext_resource type="PackedScene" uid="uid://cgmtnjh37mjxy" path="res://scenes/player.tscn" id="2_eu3m6"]
 [ext_resource type="Texture2D" uid="uid://8qlqkermhhge" path="res://assets/sprites/world_tileset.png" id="3_edb6d"]
 [ext_resource type="Texture2D" uid="uid://cte2jsa6lla0j" path="res://assets/sprites/fire_coral_fan.png" id="4_o6tcp"]
+[ext_resource type="FontFile" uid="uid://dh4fwfyu8641j" path="res://assets/fonts/PixelOperator8.ttf" id="4_vqdaq"]
 [ext_resource type="PackedScene" uid="uid://cxutkj6p4e7l" path="res://scenes/coin.tscn" id="5_5gsd1"]
 [ext_resource type="PackedScene" uid="uid://d2ifkhjx8d3tm" path="res://scenes/plateform.tscn" id="6_q157r"]
 [ext_resource type="PackedScene" uid="uid://b6krkacapm545" path="res://scenes/revive_zone.tscn" id="7_jmwph"]
@@ -516,8 +517,6 @@ _data = {
 "move": SubResource("Animation_taasa")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_or8j8"]
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nrqqk"]
 distance = 64.0
 
@@ -610,6 +609,8 @@ size = Vector2(63.9999, 71)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvnh3"]
 size = Vector2(112, 38)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or8j8"]
+
 [node name="Map2" type="Node2D"]
 script = ExtResource("1_7u7hq")
 
@@ -619,7 +620,7 @@ tile_set = SubResource("TileSet_f27hw")
 
 [node name="Player" parent="." instance=ExtResource("2_eu3m6")]
 z_index = 5
-position = Vector2(-411.614, 764.189)
+position = Vector2(-333.396, 819.612)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -630,6 +631,19 @@ drag_left_margin = 0.1
 drag_top_margin = 0.3
 drag_right_margin = 0.1
 editor_draw_drag_margin = true
+
+[node name="Label" type="Label" parent="Player/Camera2D"]
+z_index = 9
+offset_left = -138.991
+offset_top = -146.362
+offset_right = 157.009
+offset_bottom = -42.3618
+theme_override_fonts/font = ExtResource("4_vqdaq")
+text = "You Win！！
+
+Coin：%d/%d
+
+Press Space to continue"
 
 [node name="Mid" type="TileMapLayer" parent="."]
 z_index = 1
@@ -751,12 +765,6 @@ position = Vector2(2144, -209)
 [node name="revive_zone5" parent="Mid/CheckPoints" instance=ExtResource("7_jmwph")]
 position = Vector2(2768, -305)
 
-[node name="win_zone" parent="Mid" instance=ExtResource("8_mrm61")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mid/win_zone"]
-position = Vector2(3016, 441)
-shape = SubResource("RectangleShape2D_or8j8")
-
 [node name="Kills" type="Node2D" parent="Mid"]
 
 [node name="kill_zone" parent="Mid/Kills" instance=ExtResource("9_hlulq")]
@@ -860,6 +868,14 @@ shape = SubResource("RectangleShape2D_tvnh3")
 volume_db = -12.0
 autoplay = true
 
+[node name="win_zone" parent="." instance=ExtResource("8_mrm61")]
+z_index = 8
+position = Vector2(3017, 436)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="win_zone"]
+position = Vector2(-1, 4)
+shape = SubResource("RectangleShape2D_or8j8")
+
 [connection signal="take_up" from="Mid/Coins/coin" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin2" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin3" to="." method="_on_coin_take_up"]
@@ -869,4 +885,4 @@ autoplay = true
 [connection signal="take_up" from="Mid/Coins/coin7" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin8" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin9" to="." method="_on_coin_take_up"]
-[connection signal="win" from="Mid/win_zone" to="." method="_on_win_zone_win"]
+[connection signal="win" from="win_zone" to="." method="_on_win_zone_win"]

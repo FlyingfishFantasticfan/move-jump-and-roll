@@ -500,7 +500,7 @@ tile_set = SubResource("TileSet_rkb5f")
 
 [node name="Player" parent="." instance=ExtResource("3_l58ic")]
 z_index = 5
-position = Vector2(2976.89, 714.992)
+position = Vector2(43.3929, 749.573)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -514,10 +514,10 @@ drag_right_margin = 0.1
 editor_draw_drag_margin = true
 
 [node name="Label" type="Label" parent="Player/Camera2D"]
-offset_left = -146.36
-offset_top = -74.5265
-offset_right = 149.64
-offset_bottom = 29.4735
+offset_left = -136.664
+offset_top = -142.733
+offset_right = 159.336
+offset_bottom = -38.7335
 theme_override_fonts/font = ExtResource("4_kytco")
 text = "You Win！！
 
@@ -768,18 +768,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hiders/Hider8/Area2D"]
 position = Vector2(1472, 728)
 shape = SubResource("RectangleShape2D_0oa3c")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -113.0
-offset_top = -41.0
-offset_right = 183.0
-offset_bottom = 63.0
-theme_override_fonts/font = ExtResource("4_kytco")
-text = "You Win！！
-
-Coin：%d/%d
-
-Press Space to continue"
 
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="take_up" from="Mid/Coins/coin" to="." method="_on_coin_take_up"]
