@@ -620,7 +620,7 @@ tile_set = SubResource("TileSet_f27hw")
 
 [node name="Player" parent="." instance=ExtResource("2_eu3m6")]
 z_index = 5
-position = Vector2(-333.396, 819.612)
+position = Vector2(3008.19, 333.035)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -876,6 +876,7 @@ position = Vector2(3017, 436)
 position = Vector2(-1, 4)
 shape = SubResource("RectangleShape2D_or8j8")
 
+[connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="take_up" from="Mid/Coins/coin" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin2" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin3" to="." method="_on_coin_take_up"]
