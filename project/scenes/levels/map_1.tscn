@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="10_ngcp5"]
 [ext_resource type="AudioStream" uid="uid://jmo5fu4svgdf" path="res://assets/music/map2.mp3" id="13_q637f"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0g8m"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5p351"]
 texture = ExtResource("1_0pacj")
 0:0/0 = 0
 0:0/0/modulate = Color(0.219501, 0.219501, 0.219501, 1)
@@ -173,7 +173,7 @@ texture = ExtResource("1_0pacj")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rkb5f"]
-sources/0 = SubResource("TileSetAtlasSource_n0g8m")
+sources/0 = SubResource("TileSetAtlasSource_5p351")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbxj1"]
 texture = ExtResource("1_0pacj")
