@@ -785,6 +785,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Hiders" type="Node2D" parent="Mid"]
+visible = false
 
 [node name="Hider" parent="Mid/Hiders" instance=ExtResource("11_uwhld")]
 tile_map_data = PackedByteArray("AADw/zQAAAAAAAEAAADx/zQAAAAAAAEAAADx/zUAAAAAAAEAAADw/zUAAAAAAAEAAADv/zUAAAABAAAAAAA=")
