@@ -206,3 +206,7 @@ func _dead() -> void:
 	dead.emit()
 	die.play()
 	is_die = true
+
+
+func _on_win_zone_win() -> void:
+	pass # Replace with function body.

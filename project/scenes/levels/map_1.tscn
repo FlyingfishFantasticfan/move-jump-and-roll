@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="10_ngcp5"]
 [ext_resource type="AudioStream" uid="uid://jmo5fu4svgdf" path="res://assets/music/map2.mp3" id="13_q637f"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5p351"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_77pt3"]
 texture = ExtResource("1_0pacj")
 0:0/0 = 0
 0:0/0/modulate = Color(0.219501, 0.219501, 0.219501, 1)
@@ -173,7 +173,7 @@ texture = ExtResource("1_0pacj")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rkb5f"]
-sources/0 = SubResource("TileSetAtlasSource_5p351")
+sources/0 = SubResource("TileSetAtlasSource_77pt3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbxj1"]
 texture = ExtResource("1_0pacj")
@@ -501,7 +501,7 @@ tile_set = SubResource("TileSet_rkb5f")
 
 [node name="Player" parent="." instance=ExtResource("3_l58ic")]
 z_index = 5
-position = Vector2(15.9652, 665.708)
+position = Vector2(560.79, 793.565)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
