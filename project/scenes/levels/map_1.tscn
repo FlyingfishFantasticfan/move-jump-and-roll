@@ -501,7 +501,7 @@ tile_set = SubResource("TileSet_rkb5f")
 
 [node name="Player" parent="." instance=ExtResource("3_l58ic")]
 z_index = 5
-position = Vector2(560.79, 793.565)
+position = Vector2(108.519, 719.544)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

@@ -285,22 +285,34 @@ z_index = 1
 tile_map_data = PackedByteArray("AADn/x4AAAAAAAEAAADo/x4AAAAAAAEAAADp/x4AAAAAAAEAAADq/x4AAAAAAAAAAADr/x4AAAAAAAAAAADs/x4AAAAAAAAAAADs/x8AAAAAAAEAAADt/x8AAAAAAAEAAADu/x8AAAAAAAAAAADv/x8AAAAAAAAAAADw/x8AAAAAAAAAAADx/x8AAAAAAAAAAADy/x8AAAAAAAAAAADz/x8AAAAAAAAAAAD0/x8AAAAAAAAAAAD1/x8AAAAAAAAAAAD2/x8AAAAAAAAAAAD3/x8AAAAAAAAAAAD4/x8AAAAAAAAAAAD5/x8AAAAAAAAAAAD6/x8AAAAAAAAAAAD7/x8AAAAAAAAAAAD8/x8AAAAAAAAAAAD9/x8AAAAAAAAAAAD+/x4AAAAAAAAAAAD8/x4AAAADAAgAAAD8/x0AAAADAAcAAAD8/xwAAAADAAYAAAD8/xsAAAADAAUAAAD7/xoAAAACAAQAAAD7/xsAAAACAAUAAAD7/xwAAAACAAYAAAD8/xoAAAADAAQAAAD9/xoAAAAEAAQAAAD9/xsAAAAEAAUAAAD9/xwAAAAEAAYAAADq/x0AAAAAAAAAAADm/x0AAAAAAAAAAADm/x4AAAAAAAEAAADm/x8AAAAAAAEAAADm/yAAAAAAAAEAAADn/x0AAAAAAAAAAADn/x8AAAAAAAEAAADn/yAAAAAAAAEAAADo/x0AAAAAAAAAAADo/x8AAAAAAAEAAADo/yAAAAAAAAEAAADp/x0AAAAAAAAAAADp/x8AAAAAAAEAAADp/yAAAAAAAAEAAADq/x8AAAAAAAEAAADq/yAAAAAAAAEAAADr/x8AAAAAAAEAAADr/yAAAAAAAAEAAADs/yAAAAAAAAEAAADt/x4AAAAAAAAAAADt/yAAAAAAAAEAAADu/x4AAAAAAAAAAADu/yAAAAAAAAEAAADv/yAAAAAAAAEAAADv/yEAAAAAAAEAAADw/yAAAAAAAAEAAADw/yEAAAAAAAEAAADx/yAAAAAAAAEAAADx/yEAAAAAAAEAAADy/yAAAAAAAAEAAADy/yEAAAAAAAEAAADz/yAAAAAAAAEAAADz/yEAAAAAAAEAAAD0/yAAAAAAAAEAAAD1/yAAAAAAAAEAAAD2/yAAAAAAAAEAAAD3/yAAAAAAAAEAAAD4/yAAAAAAAAEAAAD5/yAAAAAAAAEAAAD6/yAAAAAAAAEAAAD7/yAAAAAAAAEAAAD8/yAAAAAAAAEAAAD9/yAAAAAAAAEAAAD+/yAAAAAAAAEAAAD//yAAAAAAAAEAAAD//x8AAAAAAAEAAAD+/x8AAAAAAAEAAAD//x4AAAAAAAEAAADs/x0AAAAAAAUAAADs/xwAAAAAAAQAAADs/xsAAAAAAAQAAADs/xoAAAAAAAMAAADw/x4AAAAAAAcAAADz/x4AAAABAAMAAAD0/x4AAAABAAMAAAD1/x4AAAABAAMAAADo/xwAAAABAAYAAADp/xwAAAABAAYAAAD2/x4AAAABAAQAAAA=")
 tile_set = SubResource("TileSet_cvilg")
 
-[node name="Buttons" type="Node2D" parent="."]
+[node name="Buttons" type="HBoxContainer" parent="."]
 z_index = 6
-position = Vector2(-361, 335)
+offset_left = -361.0
+offset_top = 335.0
+offset_right = -253.0
+offset_bottom = 359.0
 
 [node name="Button" type="Button" parent="Buttons"]
-offset_right = 43.0
-offset_bottom = 44.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("4_0a21t")
 text = "1"
 
 [node name="Button2" type="Button" parent="Buttons"]
-offset_left = 70.0
-offset_right = 113.0
-offset_bottom = 44.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("4_0a21t")
 text = "2
+"
+
+[node name="Button3" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_0a21t")
+text = "3
+"
+
+[node name="Button4" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_0a21t")
+text = "4
 "
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
@@ -323,3 +335,5 @@ texture = ExtResource("6_c100f")
 
 [connection signal="button_down" from="Buttons/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Buttons/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="Buttons/Button3" to="." method="_on_button_3_button_down"]
+[connection signal="button_down" from="Buttons/Button4" to="." method="_on_button_4_button_down"]
