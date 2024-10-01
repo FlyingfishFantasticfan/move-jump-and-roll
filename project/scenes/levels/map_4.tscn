@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://jrcbsua6ffi3"]
+[gd_scene load_steps=43 format=4 uid="uid://jrcbsua6ffi3"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_23vl8"]
 [ext_resource type="PackedScene" uid="uid://cgmtnjh37mjxy" path="res://scenes/player.tscn" id="1_wd1as"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b6krkacapm545" path="res://scenes/revive_zone.tscn" id="6_norff"]
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="8_va36v"]
 [ext_resource type="PackedScene" uid="uid://70us3ga0puej" path="res://scenes/hider.tscn" id="9_xde68"]
+[ext_resource type="AudioStream" uid="uid://jmo5fu4svgdf" path="res://assets/music/map2.mp3" id="13_bpnfq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ow8k1"]
 texture = ExtResource("2_0rmki")
@@ -922,5 +923,10 @@ shape = SubResource("RectangleShape2D_k1sgi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="win_zone"]
 position = Vector2(3993, 1239)
 shape = SubResource("RectangleShape2D_80fq8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_bpnfq")
+volume_db = -12.0
+autoplay = true
 
 [connection signal="win" from="win_zone" to="." method="_on_win_zone_win"]

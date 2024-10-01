@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bfsspnafbuq3g"]
+[gd_scene load_steps=28 format=4 uid="uid://bfsspnafbuq3g"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_7og5o"]
 [ext_resource type="PackedScene" uid="uid://cgmtnjh37mjxy" path="res://scenes/player.tscn" id="2_6qxb7"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="10_r3m6u"]
 [ext_resource type="PackedScene" uid="uid://70us3ga0puej" path="res://scenes/hider.tscn" id="11_eocfm"]
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="12_2gnig"]
+[ext_resource type="AudioStream" uid="uid://jmo5fu4svgdf" path="res://assets/music/map2.mp3" id="13_gcfgf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbjud"]
 texture = ExtResource("3_tssct")
@@ -649,6 +650,11 @@ polygon = PackedVector2Array(-55.9604, -11.675, -55.9604, 20.325, 55.0396, 20.32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="win_zone"]
 position = Vector2(3529, 935)
 shape = SubResource("RectangleShape2D_8a7mw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_gcfgf")
+volume_db = -12.0
+autoplay = true
 
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="win" from="win_zone" to="." method="_on_win_zone_win"]
