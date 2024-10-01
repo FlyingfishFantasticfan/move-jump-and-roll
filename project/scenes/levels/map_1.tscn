@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="9_2p0hy"]
 [ext_resource type="PackedScene" uid="uid://70us3ga0puej" path="res://scenes/hider.tscn" id="10_4mmxx"]
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="10_ngcp5"]
-[ext_resource type="AudioStream" uid="uid://b3e6qu4ws2b8w" path="res://assets/music/map2.mp3" id="13_q637f"]
+[ext_resource type="AudioStream" uid="uid://jmo5fu4svgdf" path="res://assets/music/map2.mp3" id="13_q637f"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0g8m"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5p351"]
 texture = ExtResource("1_0pacj")
 0:0/0 = 0
 0:0/0/modulate = Color(0.219501, 0.219501, 0.219501, 1)
@@ -173,7 +173,7 @@ texture = ExtResource("1_0pacj")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rkb5f"]
-sources/0 = SubResource("TileSetAtlasSource_n0g8m")
+sources/0 = SubResource("TileSetAtlasSource_5p351")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbxj1"]
 texture = ExtResource("1_0pacj")
@@ -539,47 +539,36 @@ position = Vector2(488, 814)
 position = Vector2(800, 808)
 
 [node name="coin3" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(1175.98, 919.522)
 
 [node name="coin4" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(1736, 760)
 
 [node name="coin5" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(1832, 613)
 
 [node name="coin6" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(-33, 883)
 
 [node name="coin7" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(-131, 766)
 
 [node name="coin8" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(2024, 760)
 
 [node name="coin9" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(2184, 760)
 
 [node name="coin10" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(1548.35, 790.114)
 
 [node name="coin11" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(2344, 776)
 
 [node name="coin12" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(3274.07, 858.063)
 
 [node name="coin13" parent="Mid/Coins" instance=ExtResource("3_ecs1y")]
-z_index = 6
 position = Vector2(3160, 936)
 
 [node name="Plateforms" type="Node2D" parent="Mid"]
