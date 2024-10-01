@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="9_2p0hy"]
 [ext_resource type="PackedScene" uid="uid://70us3ga0puej" path="res://scenes/hider.tscn" id="10_4mmxx"]
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="10_ngcp5"]
-[ext_resource type="AudioStream" uid="uid://jmo5fu4svgdf" path="res://assets/music/map2.mp3" id="13_q637f"]
+[ext_resource type="AudioStream" uid="uid://b3e6qu4ws2b8w" path="res://assets/music/map2.mp3" id="13_q637f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_77pt3"]
 texture = ExtResource("1_0pacj")
@@ -404,9 +404,6 @@ _data = {
 "new_animation": SubResource("Animation_46rd1")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cgnu"]
-size = Vector2(21, 18)
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aw81q"]
 distance = 63.3623
 
@@ -490,6 +487,9 @@ size = Vector2(32, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oa3c"]
 size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cgnu"]
+size = Vector2(21, 18)
 
 [node name="Map" type="Node2D"]
 z_index = 5
@@ -632,13 +632,6 @@ position = Vector2(2196, -50)
 [node name="revive_zone5" parent="Mid/CheckPoints" instance=ExtResource("5_iayww")]
 position = Vector2(948, 157)
 
-[node name="win_zone" parent="Mid" instance=ExtResource("9_2p0hy")]
-position = Vector2(2925, 708)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mid/win_zone"]
-position = Vector2(107, 35)
-shape = SubResource("RectangleShape2D_0cgnu")
-
 [node name="Kills" type="Node2D" parent="Mid"]
 
 [node name="kill_zone" parent="Mid/Kills" instance=ExtResource("9_2l7el")]
@@ -759,22 +752,17 @@ collision_mask = 2
 position = Vector2(1472, 728)
 shape = SubResource("RectangleShape2D_0oa3c")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -113.0
-offset_top = -41.0
-offset_right = 183.0
-offset_bottom = 63.0
-theme_override_fonts/font = ExtResource("4_kytco")
-text = "You Win！！
-
-Coin：%d/%d
-
-Press Space to continue"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_q637f")
 volume_db = -12.0
 autoplay = true
+
+[node name="win_zone" parent="." instance=ExtResource("9_2p0hy")]
+position = Vector2(2925, 708)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="win_zone"]
+position = Vector2(107, 35)
+shape = SubResource("RectangleShape2D_0cgnu")
 
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="take_up" from="Mid/Coins/coin" to="." method="_on_coin_take_up"]
@@ -790,4 +778,4 @@ autoplay = true
 [connection signal="take_up" from="Mid/Coins/coin11" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin12" to="." method="_on_coin_take_up"]
 [connection signal="take_up" from="Mid/Coins/coin13" to="." method="_on_coin_take_up"]
-[connection signal="win" from="Mid/win_zone" to="." method="_on_win_zone_win"]
+[connection signal="win" from="win_zone" to="." method="_on_win_zone_win"]

@@ -4,6 +4,7 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var coins: Node2D = $Mid/Coins
 @onready var label: Label = $Player/Camera2D/Label
+@onready var win_zone = $win_zone
 
 var num_dead : int = 0
 var score : int = 0
@@ -15,9 +16,11 @@ var is_winning : bool =false
 func _ready() -> void:
 
 	label.visible = false
-	for child in coins.get_children():
-		if child.name.begins_with("coin"):
-			num_coins += 1
+	for i in coins.get_child_count():
+		num_coins += 1
+		coins.get_child(i).take_up.connect(_on_coin_take_up)
+	player.dead.connect(_on_player_dead)
+	win_zone.win.connect(_on_win_zone_win)
 	pass # Replace with function body.
 
 
