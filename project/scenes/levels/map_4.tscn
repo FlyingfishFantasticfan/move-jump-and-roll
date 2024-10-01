@@ -798,10 +798,14 @@ libraries = {
 autoplay = "move"
 
 [node name="plateform3" parent="Mid/Plateforms" instance=ExtResource("5_e1mvn")]
-position = Vector2(896, 1190)
+position = Vector2(741, 1280)
+rotation = 1.5708
 
 [node name="plateform4" parent="Mid/Plateforms" instance=ExtResource("5_e1mvn")]
 position = Vector2(3952, 1190)
+
+[node name="plateform5" parent="Mid/Plateforms" instance=ExtResource("5_e1mvn")]
+position = Vector2(896, 1190)
 
 [node name="CheckPoints" type="Node2D" parent="Mid"]
 
