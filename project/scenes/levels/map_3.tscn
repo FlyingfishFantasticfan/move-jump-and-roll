@@ -651,3 +651,4 @@ position = Vector2(3529, 935)
 shape = SubResource("RectangleShape2D_8a7mw")
 
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
+[connection signal="win" from="win_zone" to="." method="_on_win_zone_win"]
