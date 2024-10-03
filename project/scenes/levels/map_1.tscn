@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://btk01jfoctugo" path="res://scenes/win_zone.tscn" id="9_2p0hy"]
 [ext_resource type="PackedScene" uid="uid://70us3ga0puej" path="res://scenes/hider.tscn" id="10_4mmxx"]
 [ext_resource type="PackedScene" uid="uid://ce1qx3t8dwbme" path="res://scenes/slim.tscn" id="10_ngcp5"]
-[ext_resource type="AudioStream" uid="uid://b3e6qu4ws2b8w" path="res://assets/music/map2.mp3" id="13_q637f"]
+[ext_resource type="AudioStream" uid="uid://jmo5fu4svgdf" path="res://assets/music/map2.mp3" id="13_q637f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_77pt3"]
 texture = ExtResource("1_0pacj")
@@ -752,17 +752,17 @@ collision_mask = 2
 position = Vector2(1472, 728)
 shape = SubResource("RectangleShape2D_0oa3c")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_q637f")
-volume_db = -12.0
-autoplay = true
-
 [node name="win_zone" parent="." instance=ExtResource("9_2p0hy")]
 position = Vector2(2925, 708)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="win_zone"]
 position = Vector2(107, 35)
 shape = SubResource("RectangleShape2D_0cgnu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_q637f")
+volume_db = -12.0
+autoplay = true
 
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="take_up" from="Mid/Coins/coin" to="." method="_on_coin_take_up"]
