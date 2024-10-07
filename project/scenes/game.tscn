@@ -334,14 +334,23 @@ position = Vector2(-126, 460)
 texture = ExtResource("6_c100f")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -244.0
-offset_top = 372.0
-offset_right = -130.0
-offset_bottom = 494.0
+offset_left = -301.0
+offset_top = 352.0
+offset_right = -187.0
+offset_bottom = 474.0
 text = "A to left
 D to right
 K to jump
 L to roll"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -203.0
+offset_top = 378.0
+offset_right = -66.0
+offset_bottom = 500.0
+text = "K+L is super jump
+L+K is super dash
+and L+K+L is...？"
 
 [connection signal="button_down" from="Buttons/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Buttons/Button2" to="." method="_on_button_2_button_down"]
