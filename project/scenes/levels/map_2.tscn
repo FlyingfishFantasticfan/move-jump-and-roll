@@ -621,7 +621,7 @@ tile_set = SubResource("TileSet_f27hw")
 
 [node name="Player" parent="." instance=ExtResource("2_eu3m6")]
 z_index = 5
-position = Vector2(-393.076, 713.188)
+position = Vector2(-496.602, 837.206)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
