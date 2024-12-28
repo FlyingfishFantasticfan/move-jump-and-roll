@@ -1,0 +1,38 @@
+extends CharacterBody2D
+class_name Player
+
+
+@export var run_speed : float = 160
+@export var accleration_time: float = 0.1
+@export var jump_speed :float = 400
+@export var coyote_time : float = 0.1
+@export var roll_speed:float = 400
+
+var acceleration:float
+var gravity : float = ProjectSettings.get("physics/2d/default_gravity") as float
+var direction : int = 0
+var can_jump:bool = true
+
+@onready var flippable: Node2D = $Flippable
+@onready var coyote_timer: Timer = %CoyoteTimer
+@onready var state_machine: StateMachine = $StateMachine
+@onready var animation_player: AnimationPlayer = $Flippable/AnimationPlayer
+@onready var animation_tree: AnimationTree = $AnimationTree
+
+func _ready() -> void:
+	acceleration = run_speed/accleration_time
+	coyote_timer.wait_time = coyote_time
+
+func _physics_process(delta: float) -> void:
+	direction = Input.get_axis("move_l","move_r")
+	
+	if is_on_floor():
+		can_jump = true
+	
+	velocity.y += gravity * delta
+	move_and_slide()
+
+func jump()->void:
+	if can_jump:
+		velocity.y -= jump_speed
+		can_jump = false
