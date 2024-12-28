@@ -18,7 +18,7 @@ class_name Player
 
 var acceleration:float
 var gravity : float = ProjectSettings.get("physics/2d/default_gravity") as float
-var direction : int = 0
+var direction : float = 0
 var can_jump:bool = true
 
 @onready var flippable: Node2D = $Flippable

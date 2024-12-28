@@ -310,8 +310,8 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0.6),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": ["Stand"],
-"method": &"changeState"
+"args": [],
+"method": &"tryStand"
 }]
 }
 
@@ -425,7 +425,6 @@ advance_condition = &"Roll"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8sihd"]
 switch_mode = 2
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ij625"]
 advance_mode = 2
@@ -444,15 +443,15 @@ states/roll/position = Vector2(527, 280)
 states/run/node = SubResource("AnimationNodeAnimation_6uani")
 states/run/position = Vector2(696, 65)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_5fbds"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_fra7b"), "run", "roll", SubResource("AnimationNodeStateMachineTransition_1f6ml"), "roll", "idle", SubResource("AnimationNodeStateMachineTransition_8sihd"), "idle", "roll", SubResource("AnimationNodeStateMachineTransition_ij625"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_m2ei2")]
-graph_offset = Vector2(18, 60)
+graph_offset = Vector2(10, 6)
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_30wu1"]
 advance_mode = 2
-advance_expression = "!is_on_floor()"
+advance_expression = "state_machine.current_state.name == \"OnAir\""
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ao167"]
 advance_mode = 2
-advance_expression = "is_on_floor()"
+advance_expression = "state_machine.current_state.name == \"OnFloor\""
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y1gff"]
 advance_mode = 2
@@ -513,3 +512,6 @@ tree_root = SubResource("AnimationNodeStateMachine_cw003")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../Flippable/AnimationPlayer")
 parameters/OnFloor/conditions/Roll = false
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -31)
