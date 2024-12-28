@@ -1,19 +1,19 @@
 extends CharacterBody2D
 class_name Player
 
-##移动速度
+## 移动速度
 @export var run_speed : float = 160
 
-##加速到最高速所需的时间
+## 加速到最高速所需的时间
 @export var accleration_time: float = 0.1
 
-##跳跃速度，修改可影响跳跃高度
+## 跳跃速度，修改可影响跳跃高度
 @export var jump_speed :float = 400
 
-##郊狼时间，离开平台后一段时间仍然可以跳跃
+## 郊狼时间，离开平台后一段时间仍然可以跳跃
 @export var coyote_time : float = 0.1
 
-##翻滚速度，影响翻滚距离
+## 翻滚速度，影响翻滚距离
 @export var roll_speed:float = 400
 
 var acceleration:float
