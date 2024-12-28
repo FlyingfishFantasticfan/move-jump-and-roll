@@ -11,8 +11,8 @@
 [ext_resource type="Script" path="res://classes/state_machine.gd" id="8_xwuc1"]
 [ext_resource type="Script" path="res://scenes/player/states/on_floor.gd" id="9_blqbr"]
 [ext_resource type="Script" path="res://scenes/player/states/on_air.gd" id="10_oei2o"]
-[ext_resource type="Script" path="res://scenes/player/states/idle.gd" id="11_2w21w"]
-[ext_resource type="Script" path="res://scenes/roll.gd" id="12_wmfrn"]
+[ext_resource type="Script" path="res://scenes/player/states/stand.gd" id="11_0c3a8"]
+[ext_resource type="Script" path="res://scenes/player/states/roll.gd" id="12_lr3el"]
 
 [sub_resource type="Animation" id="Animation_su43b"]
 length = 0.001
@@ -494,10 +494,10 @@ script = ExtResource("9_blqbr")
 init_state = NodePath("Stand")
 
 [node name="Stand" type="Node" parent="StateMachine/OnFloor"]
-script = ExtResource("11_2w21w")
+script = ExtResource("11_0c3a8")
 
 [node name="Roll" type="Node" parent="StateMachine/OnFloor"]
-script = ExtResource("12_wmfrn")
+script = ExtResource("12_lr3el")
 
 [node name="OnAir" type="Node" parent="StateMachine"]
 script = ExtResource("10_oei2o")
