@@ -7,7 +7,7 @@ class_name Player
 ## 加速到最高速所需的时间
 @export var accleration_time: float = 0.1
 
-## 跳跃速度，修改可影响跳跃高度
+##跳跃速度，修改可影响跳跃高度
 @export var jump_speed :float = 400
 
 ## 郊狼时间，离开平台后一段时间仍然可以跳跃
@@ -17,7 +17,6 @@ class_name Player
 @export var roll_speed:float = 400
 
 var acceleration:float
-var gravity : float = ProjectSettings.get("physics/2d/default_gravity") as float
 var direction : float = 0
 var can_jump:bool = true
 
@@ -37,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		can_jump = true
 	
-	velocity.y += gravity * delta
+	velocity += get_gravity()*delta
 	move_and_slide()
 
 func jump()->void:

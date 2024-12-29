@@ -4,7 +4,9 @@ extends State
 
 func physicsUpdate(delta:float) ->void:
 	super.physicsUpdate(delta)
-
+	if Input.is_action_just_pressed("jump"):
+		change_state.emit("onair")
+		player.jump()
 	if !player.is_on_floor()&&current_state.name != "Roll":
 		change_state.emit("onair")
 

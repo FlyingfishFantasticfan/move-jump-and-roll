@@ -7,7 +7,6 @@ var current_state : State = null
 var states : Dictionary= {}
 
 func _ready()-> void:
-	print(get_children())
 	for state in get_children():
 		if state is State:
 			states[state.name.to_lower()] = state

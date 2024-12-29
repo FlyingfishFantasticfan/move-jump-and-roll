@@ -22,7 +22,7 @@ func _ready() -> void:
 
 	var rect_shape := RectangleShape2D.new()
 
-	rect_shape.extents = Vector2((limit_right - limit_left) / 2, (limit_bottom - limit_top) / 2)
+	rect_shape.extents = Vector2((limit_right - limit_left - 18) / 2, (limit_bottom - limit_top - 28) / 2)
 	collision_shape_2d.shape = rect_shape
 	collision_shape_2d.position = Vector2((limit_right + limit_left) / 2, (limit_bottom + limit_top) / 2)
 

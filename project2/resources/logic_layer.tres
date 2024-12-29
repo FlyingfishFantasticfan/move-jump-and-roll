@@ -7,12 +7,15 @@ texture = ExtResource("1_aygeo")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/custom_data_0 = 6.0
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1
-custom_data_layer_0/name = ""
-custom_data_layer_0/type = 0
+custom_data_layer_0/name = "speed"
+custom_data_layer_0/type = 3
+custom_data_layer_1/name = ""
+custom_data_layer_1/type = 0
 sources/0 = SubResource("TileSetAtlasSource_ybrea")

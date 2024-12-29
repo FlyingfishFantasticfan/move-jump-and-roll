@@ -5,7 +5,7 @@ extends State
 func enter() ->void:
 	player.position.y -= 1
 	player.animation_tree.set("parameters/OnFloor/conditions/Roll", true)
-	player.velocity.x = player.flippable.scale.x*player.roll_speed
+	player.velocity.x += player.flippable.scale.x*player.roll_speed
 
 func physicsUpdate(delta:float) -> void:
 	if Input.is_action_just_pressed("roll"):
