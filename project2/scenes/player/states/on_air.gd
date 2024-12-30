@@ -10,6 +10,9 @@ func physicsUpdate(delta:float) -> void:
 	if Input.is_action_just_pressed("jump") && player.coyote_timer.time_left>0:
 		player.jump()
 		
+	if player.direction != 0:
+		player.flippable.scale.x = player.direction
+		
 	player.velocity.x = move_toward(player.velocity.x, player.direction*player.run_speed, delta*player.acceleration/3)
 	
 	if player.is_on_floor():
