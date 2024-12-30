@@ -16,7 +16,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("2_rd7by")
 color = Color(0.823529, 0, 0, 1)
-wait_time = null
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(72, 0)

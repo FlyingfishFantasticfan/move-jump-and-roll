@@ -19,6 +19,7 @@ class_name Player
 var acceleration:float
 var direction : float = 0
 var can_jump:bool = true
+var can_roll:bool = true
 
 @onready var flippable: Node2D = $Flippable
 @onready var coyote_timer: Timer = %CoyoteTimer

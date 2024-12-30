@@ -11,7 +11,7 @@ func physicsUpdate(delta:float) -> void:
 	if Input.is_action_just_pressed("roll"):
 		if player.direction != 0:
 			player.flippable.scale.x = player.direction
-		change_state.emit("Roll")
+		get_parent().roll()
 
 
 func exit() -> void:

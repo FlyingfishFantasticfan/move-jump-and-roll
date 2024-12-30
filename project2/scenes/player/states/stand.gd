@@ -9,4 +9,4 @@ func physicsUpdate(delta:float) -> void:
 	player.velocity.x = move_toward(player.velocity.x ,player.direction * player.run_speed ,delta*player.acceleration)
 	
 	if Input.is_action_just_pressed("roll"):
-		change_state.emit("Roll")
+		get_parent().roll()
