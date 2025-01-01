@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var revive_points:Array[Node2D]
 
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 @onready var camera: Camera2D = %Camera2D
@@ -26,10 +27,22 @@ func _ready() -> void:
 	collision_shape_2d.shape = rect_shape
 	collision_shape_2d.position = Vector2((limit_right + limit_left) / 2, (limit_bottom + limit_top) / 2)
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
+		print("Player enter "+name)
 		camera.limit_bottom =limit_bottom
 		camera.limit_left = limit_left
 		camera.limit_right = limit_right
 		camera.limit_top = limit_top
+		
+		var closest_point:Node2D = null
+		var closest_distance = INF
+
+		for point in revive_points:
+			var distance = body.global_position.distance_to(point.global_position)
+			if distance < closest_distance:
+				closest_distance = distance
+				closest_point = point
+		
+		body.revive_position = closest_point.position
+		

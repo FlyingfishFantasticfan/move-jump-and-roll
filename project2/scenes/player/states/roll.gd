@@ -1,8 +1,10 @@
 extends State
 
 @onready var player: Player = $"../../.."
+@onready var stand_collision_shape_2d: CollisionShape2D = $"../../../StandCollisionShape2D"
 
 func enter() ->void:
+	stand_collision_shape_2d.disabled = true
 	player.position.y -= 1
 	player.animation_tree.set("parameters/OnFloor/conditions/Roll", true)
 	player.velocity.x += player.flippable.scale.x*player.roll_speed

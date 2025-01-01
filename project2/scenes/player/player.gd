@@ -20,6 +20,9 @@ var acceleration:float
 var direction : float = 0
 var can_jump:bool = true
 var can_roll:bool = true
+var key_num:int =0
+var revive_position:Vector2
+var is_die := false
 
 @onready var flippable: Node2D = $Flippable
 @onready var coyote_timer: Timer = %CoyoteTimer
@@ -30,12 +33,17 @@ var can_roll:bool = true
 func _ready() -> void:
 	acceleration = run_speed/accleration_time
 	coyote_timer.wait_time = coyote_time
+	revive_position = position
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("move_l","move_r")
 	
 	if is_on_floor():
 		can_jump = true
+	
+	if is_die:
+		is_die = false
+		position = revive_position
 	
 	velocity += get_gravity()*delta
 	move_and_slide()

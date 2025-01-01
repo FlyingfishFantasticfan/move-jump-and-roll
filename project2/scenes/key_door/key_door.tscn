@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgip53hrxiruu"]
+
+[ext_resource type="Script" path="res://scenes/key_door/key_door.gd" id="1_07snb"]
+[ext_resource type="Texture2D" uid="uid://b6jd2admbx1rl" path="res://assets/key_door.png" id="1_t8n4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41o3f"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivdyb"]
+size = Vector2(32, 48)
+
+[node name="KeyDoor" type="Node2D"]
+script = ExtResource("1_07snb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t8n4k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_41o3f")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_ivdyb")
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
